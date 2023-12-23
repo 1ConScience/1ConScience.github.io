@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-size: 2em;
+        }
+        #texte_bloc{
+            margin-top:-200px;
+        }
+    </style>
+</head>
+<body>
+
+   
+
+    <img src="overview_effect_2.bmp" alt="overview_effect">
+
+    <div>
+        <p id="texte_bloc"></p>
+    </div>
+
+    <input type="file" name="inputfile" id="inputfile">
+
+    <script>
+
+
+
+
+var lignes = [];
+var adr=-1;
+var duree=1000;
+
+var texte_bloc = document.getElementById("texte_bloc");
+
+    function affiche() { 
+
+        adr++;
+        if (adr<lignes.length){
+
+            texte_bloc.innerHTML=lignes[adr];
+
+        mots_list =  (lignes[adr]).split(' ');
+        nb_mots = mots_list.length;
+
+        duree = 255*nb_mots;
+
+        setTimeout(affiche, duree); 
+
+        } 
+    }    
+
+    
+
+
+
+    document.getElementById('inputfile')
+            .addEventListener('change', function () {
+ 
+                let fr = new FileReader();
+                fr.onload = function () {
+
+                    (document.getElementById("inputfile")).style.display="none";
+
+
+                    var str = fr.result;
+                    lignes = str.split('\n');
+                    affiche();
+                }
+ 
+                fr.readAsText(this.files[0]);
+            })
+
+
+
+    </script>
+    
+</body>
+</html>
