@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXP</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+        #exe{
+            padding-top:24%;
+        }
+        canvas{
+            background-color:black;
+        }
+    </style>
+    <script src="https://unpkg.com/roughjs@latest/bundled/rough.js"></script>
+</head>
+<body>
+    <div id="exe">
+        <a href="https://lechemindetraverse.tumblr.com/">
+            <img width="50px" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/254238f2-bafe-4781-a78e-00229aa6c1fb/d28mkxf-12cdfd1d-d322-40d0-9b15-add24fa47435.png/v1/fit/w_512,h_464,q_70,strp/windows_executable_by_jasonh1234_d28mkxf-375w-2x.jpg" alt="exe_icon">
+            <br>g_tout_su?.exe
+        </a>
+    </div>
+
+
+
+
+
+
+
+    <canvas width="204" height="120"></canvas>
+
+
+
+    <script src="https://unpkg.com/roughjs@4.6.6/bundled/rough.js" crossorigin="anonymous"></script>
+
+
+
+    <script type="module">
+      const canvas = document.querySelector('canvas');
+      const rc = rough.canvas(canvas, {
+        options: {
+          disableMultiStroke: true
+        }
+      });
+  
+      rc.circle(50, 50, 80, { fill: 'red' }); 
+      rc.rectangle(120, 15, 80, 80, { fill: 'blue' });
+
+      canvas.addEventListener("click", (event) => {
+        //alert('♯ Ping Ping Ping Pong');
+        debut = false;
+        setTimeout(Tout_effacer, 333); 
+      });
+
+
+    function Tout_effacer() { 
+        document.body.innerHTML = ""; 
+      echo_test();
+    }
+
+    
+    
+    var str = "Je vais te raconter une histoire, je sais que tu adores les histoires...";
+
+    var lignes = str.split('');//si jmets un espace ca separe par espace donc mot par mot, sans espace lettre par lettre
+    var adr=-1;
+
+    var contenu="";
+
+    var duree=144;
+
+    function echo_test() { 
+
+        affiche();
+
+    }
+
+    function affiche() { 
+
+        adr++;
+        if (adr<lignes.length){
+            
+            contenu+=lignes[adr];
+            document.body.innerHTML=contenu+"|";
+            setTimeout(affiche, duree); 
+
+        } 
+        else{
+            if(!libre)next();    
+
+        }
+
+    }    
+    
+    /*function affiche_bis() { 
+
+        adr++;
+        duree--;
+        if (adr<lignes.length){
+            
+            contenu+=lignes[adr]+" ";
+            document.body.innerHTML=contenu+Math.floor(Math.random() * 145);;
+            setTimeout(affiche_bis, duree); 
+
+        } 
+        else{
+            next();
+
+        }
+
+    }*/
+
+    function next() { 
+        document.body.innerHTML="";
+
+        str = "Il était une fois un être à la recherche d'évasion.";
+
+        lignes = str.split('');
+        adr=-1;
+
+        contenu="";
+
+        duree=duree/1.25;
+
+        affiche();
+    }
+
+
+
+
+    function dessiner_coeur() { 
+
+        document.body.style.color = "cyan";
+        document.body.innerHTML="Le code de la touche ESC est 27, accessible depuis la propriété keyCode de l'objet event.";
+        if(nb_click>26){
+             document.body.style.color = "red";
+            document.body.innerHTML="♥ ❤ ❥ ❣ ❦ ❧ Deuxième couche d'information extraite <a href='verite_micronde.html'>└→</a>";
+        }
+
+    }
+
+
+var libre=false;
+var nb_click=0;
+
+    document.body.addEventListener("keydown",(event) => {
+        if (event.keyCode == 27) {
+        nb_click++;
+        dessiner_coeur();
+        libre=true;
+        }
+    },true, );
+
+
+
+    var debut = true;
+    
+    function matrix_reload() { 
+
+        rc.rectangle(0, 0, 300,300, {
+        fill: 'black',
+        fillStyle: 'solid' // solid fill
+        });
+
+
+        rc.circle(50, 50, 80, { fill: 'red' }); 
+      rc.rectangle(120, 15, 80, 80, { fill: 'blue' });
+
+        if(debut)setTimeout(matrix_reload, 125);
+    }
+    setTimeout(matrix_reload, 125);
+        
+  
+    </script>
+
+
+
+
+
+
+
+
+</body>
+</html>
