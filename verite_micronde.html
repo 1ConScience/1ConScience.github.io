@@ -123,7 +123,7 @@
 
         } 
         else{
-            if(!libre)next();    
+            next();    
 
         }
 
@@ -132,7 +132,7 @@
     function affiche_bis() { 
         document.body.innerHTML="";
 
-        if (true){
+        if (!cle1 || !cle2){
 
 
             duree=Math.floor(Math.random() * 1000);
@@ -179,8 +179,8 @@
     function dessiner_coeur() { 
 
         document.body.style.color = "cyan";
-        document.body.innerHTML="LARAcine cubique de 27 c'est trois;";
-        if(nb_click>332){
+        document.body.innerHTML="Laracine cubique de 27 c'est trois";
+        if(cle1 && cle2){
             document.body.style.color = "red";
             document.body.innerHTML="♥ ❤ ❥ ❣ ❦ ❧ Troisième couche d'information extraite <a href='verite_cubique.html'>└→</a>";
         }
@@ -191,11 +191,23 @@
 var libre=false;
 var nb_click=0;
 
+
+var cle1=false;
+var cle2=false;
+
     document.body.addEventListener("keydown",(event) => {
         if (event.keyCode == 27) {
         nb_click++;
         dessiner_coeur();
         libre=true;
+        }
+        if (event.keyCode == 50) {
+        dessiner_coeur();
+          cle1=true;
+        }
+        if (event.keyCode == 55) {
+        dessiner_coeur();
+          cle2=true;
         }
     },true, );
 
