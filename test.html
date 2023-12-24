@@ -48,7 +48,7 @@ var texte_bloc = document.getElementById("texte_bloc");
         mots_list =  (lignes[adr]).split('');
         nb_mots = mots_list.length;
 
-        duree = 200*nb_mots;
+        duree = 100*nb_mots;
 
         setTimeout(affiche, duree); 
 
@@ -63,10 +63,9 @@ var texte_bloc = document.getElementById("texte_bloc");
 
 
 
+var str="Au clair de la lune,\nMon ami Pierrot,\nPrête-moi ta plume\nPour écrire un mot.\nMa chandelle est morte,\nJe n'ai plus de feu ;Ouvre-moi ta porte,\nPour l'amour de Dieu.\n";
 
-
-                    var str = "vide\nabsence totale\npleine et consummée\ndélice du délire \nde lire tous ces livre\nen libreraie\nje suis libre\nprairie\nque neige temps passé\npour cette infamie\nen famille";
-                    lignes = str.split('\n');
+lignes = str.split('\n');
                     affiche();
 
 
