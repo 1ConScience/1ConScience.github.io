@@ -9,9 +9,11 @@
             background-color: black;
             color: white;
             text-align: center;
+            font-family: monospace, 'Courier New', Courier;
+            font-size: 1em;
         }
         #exe{
-            padding-top:24%;
+            padding-top:10%;
         }
         canvas{
             background-color:black;
@@ -90,7 +92,7 @@
             
             contenu+=lignes[adr];
             document.body.innerHTML=contenu+"|";
-            setTimeout(affiche, 255); 
+            setTimeout(affiche, 144); 
 
         } 
         else{
@@ -103,7 +105,7 @@
     function dessiner_coeur() { 
 
         document.body.style.color = "red";
-        document.body.innerHTML="♥ ❤ ❥ ❣ ❦ ❧ Première couche traversée; Information extraite; <a href='verite_carre.html'>└→</a>";
+        document.body.innerHTML="Extraire plus d'informations <a href='verite_carre.html'>└→</a>";
 
     }
 

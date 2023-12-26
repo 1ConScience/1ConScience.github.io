@@ -9,9 +9,11 @@
             background-color: black;
             color: white;
             text-align: center;
+            font-family: monospace, 'Courier New', Courier;
+            font-size: 1em;
         }
         #exe{
-            padding-top:24%;
+            padding-top:10%;
         }
         canvas{
             background-color:black;
@@ -153,7 +155,9 @@
 
         } 
         else{
-
+          document.body.style.fontSize = "1em";
+          document.body.style.color = "red";
+            document.body.innerHTML="Extraire plus d'informations <a href='verite_cubique.html'>└→</a>";
         }
 
     }
@@ -176,20 +180,8 @@
 
 
 
-    function dessiner_coeur() { 
-
-        document.body.style.color = "cyan";
-        document.body.innerHTML="Laracine cubique de 27 est égale à trois.";
-        if(cle1 && cle2){
-            document.body.style.color = "red";
-            document.body.innerHTML="♥ ❤ ❥ ❣ ❦ ❧ Troisième couche traversée; Information extraite; <a href='verite_cubique.html'>└→</a>";
-        }
-
-    }
 
 
-var libre=false;
-var nb_click=0;
 
 
 var cle1=false;
@@ -197,16 +189,13 @@ var cle2=false;
 
     document.body.addEventListener("keydown",(event) => {
         if (event.keyCode == 27) {
-        nb_click++;
-        dessiner_coeur();
-        libre=true;
+          document.body.style.color = "cyan";
+          document.body.innerHTML="Laracine cubique de 27 est égale à trois.";
         }
         if (event.keyCode == 50) {
-        dessiner_coeur();
           cle1=true;
         }
         if (event.keyCode == 55) {
-        dessiner_coeur();
           cle2=true;
         }
     },true, );

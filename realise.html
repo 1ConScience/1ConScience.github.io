@@ -9,10 +9,8 @@
             background-color: black;
             color: white;
             text-align: center;
-            font-size: 2em;
-        }
-        #texte_bloc{
-            margin-top:-200px;
+            font-family: monospace, 'Courier New', Courier;
+            font-size: 1em;
         }
     </style>
 </head>
@@ -20,7 +18,6 @@
 
    
 
-    <img src="overview_effect_2.bmp" alt="overview_effect">
 
     <div>
         <p id="texte_bloc"></p>
@@ -55,6 +52,7 @@ var texte_bloc = document.getElementById("texte_bloc");
 
         } 
         else{
+            texte_bloc.style.color = "cyan";
             texte_bloc.innerHTML="Merci pour ces quelques mots jetés au néant, en espérant qu'ils nous reviennent un jour en écho.";
    
    
