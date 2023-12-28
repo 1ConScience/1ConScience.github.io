@@ -23,6 +23,10 @@
         <p id="texte_bloc"></p>
     </div>
 
+    <div>
+        <p id="texte_bloc2"></p>
+    </div>
+
     <input type="file" name="inputfile" id="inputfile" accept=".txt" > 
 
     <script>
@@ -35,6 +39,8 @@ var adr=-1;
 var duree=1000;
 
 var texte_bloc = document.getElementById("texte_bloc");
+
+var texte_bloc2 = document.getElementById("texte_bloc2");
 
     function affiche() { 
 
@@ -55,11 +61,22 @@ var texte_bloc = document.getElementById("texte_bloc");
             texte_bloc.style.color = "cyan";
             texte_bloc.innerHTML="Merci pour ces quelques mots jetés au néant, en espérant qu'ils nous reviennent un jour en écho.";
    
-   
+            setTimeout(now, 5000); 
         }    
 
     }
 
+
+    function now(){
+
+
+        texte_bloc.style.color = "cyan";
+            texte_bloc.innerHTML="Merci pour ces quelques mots jetés au néant, en espérant qu'ils nous reviennent un jour en écho.";
+
+    
+            texte_bloc2.style.color = "white";
+            texte_bloc2.innerHTML="<br><br><br><br>Et maintenant ?";
+    }
 
 
     document.getElementById('inputfile')
@@ -79,6 +96,26 @@ var texte_bloc = document.getElementById("texte_bloc");
                 fr.readAsText(this.files[0]);
             })
 
+
+
+
+    document.body.addEventListener("keydown",(event) => {
+        if (event.keyCode == 27) {
+            texte_bloc2.style.color = "white";
+            texte_bloc.style.color = "white";
+            texte_bloc2.innerHTML="";
+            texte_bloc.innerHTML="Belle escape ! Un petit saut dans l'espace ?";
+        }
+    },true, );
+
+    document.body.addEventListener("keydown",(event) => {
+        if (event.keyCode == 32) {
+            texte_bloc2.style.color = "red";//cest vraiment codé avec le cul (si on peut parler de code)
+            texte_bloc.style.color = "red";
+            texte_bloc2.innerHTML="";
+            texte_bloc.innerHTML="Extraire plus d'informations <a href='verite_tangramique.html'>└→</a>";
+        }
+    },true, );
 
 
     </script>
