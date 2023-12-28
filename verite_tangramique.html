@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
-    <title>Tangram</title>
+    <title>EXP</title>
 
 
 
@@ -10,6 +10,21 @@
         background-color: black;
         margin:auto;
         text-align: center;
+
+        padding-top:8px;
+
+        background-image:url('bg.jpg');
+
+
+        color: white;
+            text-align: center;
+            font-family: monospace, 'Courier New', Courier;
+            font-size: 1em;
+
+
+      }
+      #tangram{
+        margin-top:100px;
       }
     </style>
 
@@ -18,8 +33,120 @@
 
   <body>
     
-<svg id="board" viewBox="-10 -36 520 546" width="1169" height="1169" style="margin-top: 0px; margin-bottom: 0px;"><path d="m 0,0 250,0 125,-125 -250,0 z" fill="#ff0000" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;" stroke="#000000" transform="matrix(1,0,0,1,0,500)"></path><path d="m 0,0 250,250 250,-250 z" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;" fill="#0000ff" stroke="#000000" transform="matrix(1,0,0,1,0,0)"></path><path d="m 0,0 250,250 -250,250 z" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;" fill="#008000" stroke="#000000" transform="matrix(1,0,0,1,0,0)"></path><path d="m 0,0 -125,125 250,0 z" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;" fill="#00ffff" stroke="#000000" transform="matrix(1,0,0,1,250,250)"></path><path d="m 0,0 125,125 125,-125 -125,-125 z" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;" fill="#ffa500" stroke="#000000" transform="matrix(1,0,0,1,250,250)"></path><path d="m 0,0 0,-250 -125,125 z" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;" fill="#ffff00" stroke="#000000" transform="matrix(1,0,0,1,500,250)"></path><path d="m 0,0 250,0 0,-250 z" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;" fill="#ee82ee" stroke="#000000" transform="matrix(1,0,0,1,250,500)"></path></svg>
 
-    
-    
-</body></html>
+
+
+
+
+
+
+
+<div id="tangram">
+
+</div>
+
+
+
+
+
+  
+
+
+
+
+
+<div><p id="texte_bloc"></p></div>
+
+    <script>
+
+
+
+var texte_bloc = document.getElementById("texte_bloc");
+
+
+var tangram = document.getElementById("tangram");
+
+
+
+
+
+
+
+
+
+
+
+var cle1=false;
+var cle2=false;
+
+    document.body.addEventListener("keydown",(event) => {
+        if (event.keyCode == 27) {
+          texte_bloc.style.color = "cyan";//ok les indices sont en cyan alors
+          texte_bloc.style.backgroundColor = "black";//ok les indices sont en cyan alors
+          texte_bloc.innerHTML="Dois-je te rafraîchir la mémoire ?";
+        }
+        if (event.keyCode == 50) {
+          cle1=true;
+          if(dede==7 && cle2){
+            document.body.style.color = "blue";
+            document.body.style.backgroundImage = "none";
+            document.body.innerHTML="Extraire plus d'informations <a href='index.html'>└→</a>";
+          }
+        }
+        if (event.keyCode == 55) {
+          cle2=true;
+          if(dede==7 && cle1){
+            
+            document.body.style.color = "blue";
+            document.body.style.backgroundImage = "none";
+            document.body.innerHTML="Extraire plus d'informations <a href='index.html'>└→</a>";
+          }
+        }
+    },true, );
+
+
+
+
+
+
+
+    var dede = Math.floor(Math.random() * 8);
+
+
+    console.log(dede);
+
+    switch (dede) {
+  case 0:
+  tangram.innerHTML='<svg id="board" viewBox="-10 -36 520 546" width="500" height="500" style="margin-top: 0px; margin-bottom: 0px;"><path d="m 0,0 250,0 125,-125 -250,0 z" fill="#ff0000" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;" stroke="#000000" transform="matrix(1,0,0,1,0,500)"></path><path d="m 0,0 250,250 250,-250 z" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;" fill="#0000ff" stroke="#000000" transform="matrix(1,0,0,1,0,0)"></path><path d="m 0,0 250,250 -250,250 z" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;" fill="#008000" stroke="#000000" transform="matrix(1,0,0,1,0,0)"></path><path d="m 0,0 -125,125 250,0 z" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;" fill="#00ffff" stroke="#000000" transform="matrix(1,0,0,1,250,250)"></path><path d="m 0,0 125,125 125,-125 -125,-125 z" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;" fill="#ffa500" stroke="#000000" transform="matrix(1,0,0,1,250,250)"></path><path d="m 0,0 0,-250 -125,125 z" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;" fill="#ffff00" stroke="#000000" transform="matrix(1,0,0,1,500,250)"></path><path d="m 0,0 250,0 0,-250 z" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;" fill="#ee82ee" stroke="#000000" transform="matrix(1,0,0,1,250,500)"></path></svg>';
+    break;
+  case 1:
+  tangram.innerHTML='<svg id="board" viewBox="-46 -51.1 822 863.1" width="500" height="500" style="margin-top: 0px; margin-bottom: 0px;"><path d="m 0,0 250,0 125,-125 -250,0 z" fill="#ff0000" stroke="#000000" transform="matrix(0,1,-1,0,177,0)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 250,250 250,-250 z" fill="#0000ff" stroke="#000000" transform="matrix(1,0,0,1,229,448)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 250,250 -250,250 z" fill="#008000" stroke="#000000" transform="matrix(-0.7071,0.7071,-0.7071,-0.7071,583,802)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 -125,125 250,0 z" fill="#00ffff" stroke="#000000" transform="matrix(-0.7071,0.7071,-0.7071,-0.7071,177,177)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 125,125 125,-125 -125,-125 z" fill="#ffa500" stroke="#000000" transform="matrix(1,0,0,1,52,375)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 0,-250 -125,125 z" fill="#ffff00" stroke="#000000" transform="matrix(-1,0,0,-1,52,375)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 250,0 0,-250 z" fill="#ee82ee" stroke="#000000" transform="matrix(-0.7071,0.7071,-0.7071,-0.7071,229,448)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path></svg>';
+    break;
+  case 2:
+  tangram.innerHTML='<svg id="board" viewBox="-10 -46.4 728 764.4" width="500" height="500" style="margin-top: 0px; margin-bottom: 0px;"><path d="m 0,0 250,0 125,-125 -250,0 z" fill="#ff0000" stroke="#000000" transform="matrix(-0.7071,0.7071,-0.7071,-0.7071,354,354)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 250,250 250,-250 z" fill="#0000ff" stroke="#000000" transform="matrix(0.7071,-0.7071,0.7071,0.7071,354,354)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 250,250 -250,250 z" fill="#008000" stroke="#000000" transform="matrix(-0.7071,0.7071,-0.7071,-0.7071,354,354)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 -125,125 250,0 z" fill="#00ffff" stroke="#000000" transform="matrix(0.7071,0.7071,-0.7071,0.7071,531,531)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 125,125 125,-125 -125,-125 z" fill="#ffa500" stroke="#000000" transform="matrix(0.7071,0.7071,-0.7071,0.7071,354,354)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 0,-250 -125,125 z" fill="#ffff00" stroke="#000000" transform="matrix(0.7071,0.7071,-0.7071,0.7071,531,531)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 250,0 0,-250 z" fill="#ee82ee" stroke="#000000" transform="matrix(0.7071,0.7071,-0.7071,0.7071,0,354)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path></svg>';
+    break;
+  case 3:
+  tangram.innerHTML='<svg id="board" viewBox="-10 -48.4 748 806.4" width="500" height="500" style="margin-top: 0px; margin-bottom: 0px;"><path d="m 0,0 250,0 125,-125 -250,0 z" fill="#ff0000" stroke="#000000" transform="matrix(0,1,-1,0,125,125)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 250,250 250,-250 z" fill="#0000ff" stroke="#000000" transform="matrix(-0.7071,-0.7071,0.7071,-0.7071,728,728)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 250,250 -250,250 z" fill="#008000" stroke="#000000" transform="matrix(1,0,0,1,250,250)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 -125,125 250,0 z" fill="#00ffff" stroke="#000000" transform="matrix(-1,0,0,-1,125,125)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 125,125 125,-125 -125,-125 z" fill="#ffa500" stroke="#000000" transform="matrix(1,0,0,1,250,250)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 0,-250 -125,125 z" fill="#ffff00" stroke="#000000" transform="matrix(1,0,0,1,250,250)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 250,0 0,-250 z" fill="#ee82ee" stroke="#000000" transform="matrix(-0.7071,-0.7071,0.7071,-0.7071,728,375)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path></svg>';
+    break;
+  case 4:
+  tangram.innerHTML='<svg id="board" viewBox="-227 -69.2 1184 1243.2" width="500" height="500" style="margin-top: 0px; margin-bottom: 0px;"><path d="m 0,0 250,0 125,-125 -250,0 z" fill="#ff0000" stroke="#000000" transform="matrix(0,1,-1,0,177,427)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 250,250 250,-250 z" fill="#0000ff" stroke="#000000" transform="matrix(0,-1,1,0,479,788)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 250,250 -250,250 z" fill="#008000" stroke="#000000" transform="matrix(1,0,0,1,165,664)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 -125,125 250,0 z" fill="#00ffff" stroke="#000000" transform="matrix(0.7071,0.7071,-0.7071,0.7071,177,427)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 125,125 125,-125 -125,-125 z" fill="#ffa500" stroke="#000000" transform="matrix(0.7071,-0.7071,0.7071,0.7071,177,427)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 0,-250 -125,125 z" fill="#ffff00" stroke="#000000" transform="matrix(-0.7071,0.7071,-0.7071,-0.7071,302,552)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 250,0 0,-250 z" fill="#ee82ee" stroke="#000000" transform="matrix(0,1,-1,0,160,0)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path></svg>';
+    break;
+  case 5:
+  tangram.innerHTML='<svg id="board" viewBox="-10 -46.4 728 764.4" width="500" height="500" style="margin-top: 0px; margin-bottom: 0px;"><path d="m 0,0 250,0 125,-125 -250,0 z" fill="#ff0000" stroke="#000000" transform="matrix(0.7071,0.7071,-0.7071,0.7071,354,177)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 250,250 250,-250 z" fill="#0000ff" stroke="#000000" transform="matrix(0.7071,0.7071,-0.7071,0.7071,354,177)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 250,250 -250,250 z" fill="#008000" stroke="#000000" transform="matrix(0.7071,0.7071,-0.7071,0.7071,354,177)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 -125,125 250,0 z" fill="#00ffff" stroke="#000000" transform="matrix(-0.7071,0.7071,-0.7071,-0.7071,177,354)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 125,125 125,-125 -125,-125 z" fill="#ffa500" stroke="#000000" transform="matrix(0.7071,0.7071,-0.7071,0.7071,266,531)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 0,-250 -125,125 z" fill="#ffff00" stroke="#000000" transform="matrix(0.7071,0.7071,-0.7071,0.7071,177,354)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 250,0 0,-250 z" fill="#ee82ee" stroke="#000000" transform="matrix(-0.7071,-0.7071,0.7071,-0.7071,531,177)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path></svg>';
+    break;
+  case 6:
+  tangram.innerHTML='<svg id="board" viewBox="-10 -175.05 801 841.05" width="500" height="500" style="margin-top: 0px; margin-bottom: 0px;"><path d="m 0,0 250,0 125,-125 -250,0 z" fill="#ff0000" stroke="#000000" transform="matrix(0.7071,-0.7071,0.7071,0.7071,604,501)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 250,250 250,-250 z" fill="#0000ff" stroke="#000000" transform="matrix(0.7071,0.7071,-0.7071,0.7071,250,177)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 250,250 -250,250 z" fill="#008000" stroke="#000000" transform="matrix(0.7071,-0.7071,0.7071,0.7071,250,177)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 -125,125 250,0 z" fill="#00ffff" stroke="#000000" transform="matrix(1,0,0,1,125,52)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 125,125 125,-125 -125,-125 z" fill="#ffa500" stroke="#000000" transform="matrix(0.7071,-0.7071,0.7071,0.7071,0,354)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 0,-250 -125,125 z" fill="#ffff00" stroke="#000000" transform="matrix(0,-1,1,0,250,354)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path><path d="m 0,0 250,0 0,-250 z" fill="#ee82ee" stroke="#000000" transform="matrix(-0.7071,-0.7071,0.7071,-0.7071,604,177)" style="stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path></svg>';
+    break;
+  case 7:
+  tangram.innerHTML='<svg id="board" viewBox="-10 -106.5 830 871.5" width="500" height="500" style="margin-top: 0px; margin-bottom: 0px;"><path d="m 269,169 -44,-44 125,-125 125,125 -125,125 -80,-79 0,44 177,176 0,-46 354,0 0,354 -354,0 0,-306 -177,0 0,307 -250,0 125,-125 -52,-52 0,-177 z" fill="#00ffff" stroke="#000000" style="fill-rule: evenodd; stroke-width: 2.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 2.5; stroke-opacity: 1; stroke-dasharray: none;"></path></svg>';
+    break;
+  default:
+    console.log(`Sorry, we are out of `);
+}
+
+
+
+    </script>
+
+
+  </body></html>
