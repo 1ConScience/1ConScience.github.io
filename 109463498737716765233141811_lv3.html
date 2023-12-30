@@ -27,10 +27,37 @@
 
         <label for="name">Say my name</label>
     
-        <input type="text" id="name" name="name" required minlength="4" maxlength="8" size="10" />
+        <input onchange="updateassets(this)" type="text" id="name" name="name" required minlength="4" maxlength="8" size="10" />
     
     
     </div>
+
+
+
+
+<script>
+
+
+
+
+const input = document.querySelector("input");
+
+input.addEventListener("input", updateValue);
+//C'est une belle sensation que de se sentir dans la matrice...
+function updateValue(e) {
+    str_txt = e.target.value;
+
+
+  if(str_txt=="L" || str_txt=="a" || str_txt=="r" || str_txt=="R" || str_txt=="l" || str_txt=="A"){
+            alert("Je n'aurais pas cru... https://isomorphee.tumblr.com/");
+
+            console.log("ping");
+        }
+
+}
+
+
+</script>
 
 
 </body>
