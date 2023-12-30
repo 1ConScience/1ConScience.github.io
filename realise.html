@@ -47,6 +47,7 @@ var texte_bloc2 = document.getElementById("texte_bloc2");
         adr++;
         if (adr<lignes.length){
 
+            texte_bloc.style.fontStyle = "italic";
             texte_bloc.innerHTML=lignes[adr];
 
         mots_list =  (lignes[adr]).split('');
@@ -58,6 +59,9 @@ var texte_bloc2 = document.getElementById("texte_bloc2");
 
         } 
         else{
+
+            texte_bloc.style.fontStyle = "normal";
+
             texte_bloc.style.color = "white";
             texte_bloc.innerHTML="Merci pour ces quelques mots jetés au néant, en espérant qu'ils nous reviennent un jour en écho.";
    
