@@ -18,6 +18,86 @@
         canvas{
             background-color:black;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        h1.loading{
+  font-size: 3em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+span[class^="dot-"]{
+  opacity: 0;
+}
+.dot-one{
+  animation: dot-one 2s infinite linear
+}
+.dot-two{
+  animation: dot-two 2s infinite linear
+}
+.dot-three{
+  animation: dot-three 2s infinite linear
+}
+@keyframes dot-one{
+  0%{
+    opacity: 0;
+  }
+  15%{
+    opacity: 0;
+  }
+  25%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes dot-two{
+  0%{
+    opacity: 0;
+  }
+  25%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes dot-three{
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0;
+  }
+  75%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+
+
+
+
     </style>
     <script src="https://unpkg.com/roughjs@latest/bundled/rough.js"></script>
 </head>
@@ -36,6 +116,18 @@
 
 
     <canvas width="204" height="120"></canvas>
+
+
+
+    <div class="wrapper">
+        <div class="loading-text"> <!--Loading-text-->
+          <h1>ENDING
+            <span class="dot-one"> .</span>
+            <span class="dot-two"> .</span>
+            <span class="dot-three"> .</span>
+          </h1>
+        </div> <!--/Loading-text-->
+      </div> <!-- /Wrapper -->
 
 
 
