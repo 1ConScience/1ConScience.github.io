@@ -86,7 +86,7 @@
     function affiche() { 
 
         adr++;
-        if (adr<lignes.length){
+        if (adr<lignes.length && !libre){
             
             contenu+=lignes[adr];
             document.body.innerHTML=contenu+"|";
@@ -136,26 +136,29 @@
 
 
 
+    var already = false;
     function dessiner_coeur() { 
 
-        document.body.style.color = "cyan";
-        document.body.innerHTML="Le code de la touche ESC est 27, accessible depuis la propriété keyCode de l'objet event.";
-        if(nb_click>26){
+   
+        if(already){
              document.body.style.color = "red";
             document.body.innerHTML="Extraire plus d'informations <a href='verite_micronde.html'>└→</a>";
+        }
+        else{
+            document.body.style.color = "cyan";
+            document.body.innerHTML="Le code de la touche ESC est 27, accessible depuis la propriété keyCode de l'objet event.";
+            already=true;
         }
 
     }
 
 
 var libre=false;
-var nb_click=0;
 
     document.body.addEventListener("keydown",(event) => {
         if (event.keyCode == 27) {
-        nb_click++;
-        dessiner_coeur();
         libre=true;
+        dessiner_coeur();
         }
     },true, );
 
