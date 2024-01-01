@@ -25,7 +25,7 @@
 
     <div style="position:absolute; top: 8px;text-align: center;">
 
-        <label for="name">Say my name</label>
+        <label for="name">Donne-moi un nombre entre 1 et 100</label>
     
         <input onchange="updateassets(this)" type="text" id="name" name="name" required minlength="4" maxlength="8" size="10" />
     
@@ -48,8 +48,15 @@ function updateValue(e) {
     str_txt = e.target.value;
 
 
-  if(str_txt=="L" || str_txt=="l"){
-            alert("Je n'aurais pas cru... https://isomorphee.tumblr.com/");
+  if(str_txt=="27"){
+
+    setTimeout(function() {
+        alert("Une prison pour ton esprit. Et il faut que tu saches que malheureusement, si tu veux découvrir ce qu’est la Matrice, tu devras l’explorer toi-même […] isomorphee.tumblr.com");
+}, 500);
+
+
+
+            
 
             console.log("ping");
         }
