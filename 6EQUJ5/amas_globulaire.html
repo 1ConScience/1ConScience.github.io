@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXP²</title>
+    <style>
+        body{
+            background-image: url("fond.png");
+            color: white;
+            text-align: center;
+            font-family: monospace, 'Courier New', Courier;
+            font-size: 1em;
+        }
+
+
+
+
+
+    </style>
+    <script src="https://unpkg.com/roughjs@latest/bundled/rough.js"></script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+    <canvas width="300" height="300"></canvas>
+
+    <div><img src="Draags.png" alt="Draags"></div>
+
+
+
+
+    <script src="https://unpkg.com/roughjs@4.6.6/bundled/rough.js" crossorigin="anonymous"></script>
+
+
+
+    <script type="module">
+
+      const canvas = document.querySelector('canvas');
+      const rc = rough.canvas(canvas, {
+        options: {
+          disableMultiStroke: true
+        }
+      });
+
+
+
+
+
+
+
+
+  
+rc.circle(150, 150, 100, {
+  fill: 'black',
+  fillStyle: 'cross-hatch' // solid fill
+});
+
+
+
+
+var debut = true;
+    
+function matrix_reload() { 
+
+  rc.circle(150, 150, 100, {
+  fill: 'black',
+  fillStyle: 'cross-hatch' // solid fill
+  });
+  if(debut)setTimeout(matrix_reload, 250);
+
+}
+
+setTimeout(matrix_reload, 250);
+
+
+
+
+
+
+
+
+
+
+      canvas.addEventListener("click", (event) => {
+        //alert('♯ Ping Ping Ping Pong');
+        debut = false;
+        setTimeout(Tout_effacer, 333); 
+      });
+
+
+
+
+
+
+
+  
+    </script>
+
+
+
+
+
+
+
+
+</body>
+</html>

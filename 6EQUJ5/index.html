@@ -138,6 +138,56 @@ span[class^="dot-"]{
   
       rc.circle(150, 150, 100, { fill: 'white' }); 
 
+      canvas.addEventListener("click", (event) => {
+        //alert('♯ Ping Ping Ping Pong');
+        debut = false;
+        setTimeout(Tout_effacer, 333); 
+      });
+
+
+    function Tout_effacer() { 
+        document.body.innerHTML = ""; 
+      echo_test();
+    }
+
+    
+    
+    const str = "Tu dois être fier de toi...";
+
+    const lignes = str.split('');//si jmets un espace ca separe par espace donc mot par mot, sans espace lettre par lettre
+    var adr=-1;
+
+    var contenu="";
+
+    function echo_test() { 
+
+        affiche();
+
+    }
+
+    function affiche() { 
+
+        adr++;
+        console.log(adr);
+        if (adr<lignes.length){
+            
+            contenu+=lignes[adr];
+            document.body.innerHTML=contenu+"|";
+            setTimeout(affiche, 144); 
+
+        } 
+        else{
+            document.body.addEventListener("keydown", dessiner_coeur);
+
+        }
+
+    }
+
+    function dessiner_coeur() { 
+
+      document.location.href="amas_globulaire.html"; 
+
+    }
 
         
 
@@ -157,23 +207,6 @@ span[class^="dot-"]{
         if(debut)setTimeout(matrix_reload, 125);
     }
     setTimeout(matrix_reload, 125);
-
-
-
-
-
-
-
-
-
-
-
-    
-
-    canvas.addEventListener("click", (event) => {
-        debut=false;
-        document.body.innerHTML = "Tu dois être fier de toi..."; 
-      });
 
   
     </script>
