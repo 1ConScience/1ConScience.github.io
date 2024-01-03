@@ -101,8 +101,13 @@ setTimeout(matrix_reload, 150);
       });
 
 
+var nb_ping=0;
       
 function ping(){
+
+  nb_ping++;
+
+  console.log(nb_ping);
 
   rc.circle(150, 150, 100, {
     fill: 'white',
@@ -123,7 +128,11 @@ function ping(){
 
 
 
+  if(nb_ping==27){
+    fenetre.innerHTML+='<a style="text-decoration: none;font-size:2em;position:fixed;top:7%;left:2%;color:cyan;font-weight: bold;" href="Autostéréogramme.html">Pong ♫</a>';
 
+
+  }
 
 
 
