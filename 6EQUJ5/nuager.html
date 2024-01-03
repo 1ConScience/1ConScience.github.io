@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>nuage</title>
+    <title>Autostéréogramme</title>
     <style>
         body{
             background-color: black;
@@ -97,8 +97,20 @@ function traiter(){
     var mapAsc = new Map([...map.entries()].sort((a,b) => b[1] - a[1]));
 
     for (let [key, value] of mapAsc) {
-        //texte_bloc.innerHTML+=key + " - " + value+"<br>";
-        texte_bloc.innerHTML+=key+" ";
+
+
+
+        let zizi = key.search(/monade/gi);
+        let nenette = key.search(/daemon/gi);
+
+        
+        if(zizi==-1 && nenette==-1){
+            texte_bloc.innerHTML+=key+" ";
+        }
+        else{
+            texte_bloc.innerHTML+="<span style='color:cyan;'>"+key+"</span> ";
+        }
+
     }
 
 
