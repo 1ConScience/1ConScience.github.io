@@ -122,6 +122,12 @@ span[class^="dot-"]{
       </div> <!-- /Wrapper -->
 
 
+      <div>
+        <p >
+          Tu dois être fier de toi...
+        </p>
+      </div>
+
 
     <script src="https://unpkg.com/roughjs@4.6.6/bundled/rough.js" crossorigin="anonymous"></script>
 
@@ -146,48 +152,10 @@ span[class^="dot-"]{
 
 
     function Tout_effacer() { 
-        document.body.innerHTML = ""; 
-      echo_test();
-    }
-
-    
-    
-    const str = "Tu dois être fier de toi...";
-
-    const lignes = str.split('');//si jmets un espace ca separe par espace donc mot par mot, sans espace lettre par lettre
-    var adr=-1;
-
-    var contenu="";
-
-    function echo_test() { 
-
-        affiche();
-
-    }
-
-    function affiche() { 
-
-        adr++;
-        console.log(adr);
-        if (adr<lignes.length){
-            
-            contenu+=lignes[adr];
-            document.body.innerHTML=contenu+"|";
-            setTimeout(affiche, 144); 
-
-        } 
-        else{
-            document.body.addEventListener("keydown", dessiner_coeur);
-
-        }
-
-    }
-
-    function dessiner_coeur() { 
-
       document.location.href="amas_globulaire.html"; 
-
     }
+
+    
 
         
 
