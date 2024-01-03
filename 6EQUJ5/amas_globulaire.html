@@ -14,7 +14,13 @@
         }
 
 
-
+        #fenetre{
+          width:50%;
+          height:50%;
+          position:absolute;
+          top:0;
+          left:0;
+        }
 
 
     </style>
@@ -34,7 +40,7 @@
     <div><img src="Draags.png" alt="Draags"></div>
 
 
-
+    <div id="fenetre"></div>
 
     <script src="https://unpkg.com/roughjs@4.6.6/bundled/rough.js" crossorigin="anonymous"></script>
 
@@ -73,11 +79,11 @@ function matrix_reload() {
   fill: 'black',
   fillStyle: 'cross-hatch' // solid fill
   });
-  if(debut)setTimeout(matrix_reload, 250);
+  if(debut)setTimeout(matrix_reload, 100);
 
 }
 
-setTimeout(matrix_reload, 250);
+setTimeout(matrix_reload, 150);
 
 
 
@@ -90,12 +96,43 @@ setTimeout(matrix_reload, 250);
 
       canvas.addEventListener("click", (event) => {
         //alert('♯ Ping Ping Ping Pong');
-        debut = false;
-        setTimeout(Tout_effacer, 333); 
+        //debut = false;
+        setTimeout(ping, 150); 
       });
 
 
+      
+function ping(){
 
+  rc.circle(150, 150, 100, {
+    fill: 'white',
+    fillStyle: 'solid' // solid fill
+  });
+
+
+  var x = Math.floor(Math.random() * 90);
+  var y = Math.floor(Math.random() * 90);
+  var size = Math.floor(Math.random() * 10);
+
+
+  var fenetre = document.querySelector('#fenetre');
+
+  fenetre.innerHTML+='<h1 style="font-size:'+size+'em;position:fixed;top:'+x+'%;left:'+y+'%;color:black;">Ping ! ♪</h1>';
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+}
 
 
 
