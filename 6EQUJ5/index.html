@@ -1,12 +1,189 @@
-<html>
-  <head>
-    <title>
-      EXP²
-    </title>
-  </head>
-  <body>
-    <p>
-      Hellow World!
-    </p>
-  </body>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXP²</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: monospace, 'Courier New', Courier;
+            font-size: 1em;
+        }
+        canvas{
+            background-color:black;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        h1.loading{
+  font-size: 3em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+span[class^="dot-"]{
+  opacity: 0;
+}
+.dot-one{
+  animation: dot-one 2s infinite linear
+}
+.dot-two{
+  animation: dot-two 2s infinite linear
+}
+.dot-three{
+  animation: dot-three 2s infinite linear
+}
+@keyframes dot-one{
+  0%{
+    opacity: 0;
+  }
+  15%{
+    opacity: 0;
+  }
+  25%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes dot-two{
+  0%{
+    opacity: 0;
+  }
+  25%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes dot-three{
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0;
+  }
+  75%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+
+
+
+
+    </style>
+    <script src="https://unpkg.com/roughjs@latest/bundled/rough.js"></script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+    <canvas width="300" height="300"></canvas>
+
+
+
+    <div class="wrapper">
+        <div class="loading-text"> <!--Loading-text-->
+          <h1>89%
+            <span class="dot-one"> .</span>
+            <span class="dot-two"> .</span>
+            <span class="dot-three"> .</span>
+          </h1>
+        </div> <!--/Loading-text-->
+      </div> <!-- /Wrapper -->
+
+
+
+    <script src="https://unpkg.com/roughjs@4.6.6/bundled/rough.js" crossorigin="anonymous"></script>
+
+
+
+    <script type="module">
+
+      const canvas = document.querySelector('canvas');
+      const rc = rough.canvas(canvas, {
+        options: {
+          disableMultiStroke: true
+        }
+      });
+  
+      rc.circle(150, 150, 100, { fill: 'white' }); 
+
+
+        
+
+
+    var debut = true;
+    
+    function matrix_reload() { 
+
+        rc.rectangle(0, 0, 300,300, {
+        fill: 'black',
+        fillStyle: 'solid' // solid fill
+        });
+
+
+        rc.circle(150, 150, 100, { fill: 'white' }); 
+
+        if(debut)setTimeout(matrix_reload, 125);
+    }
+    setTimeout(matrix_reload, 125);
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    canvas.addEventListener("click", (event) => {
+        debut=false;
+        document.body.innerHTML = "Tu dois être fier de toi..."; 
+      });
+
+  
+    </script>
+
+
+
+
+
+
+
+
+</body>
 </html>
