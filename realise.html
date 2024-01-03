@@ -114,10 +114,9 @@ var texte_bloc2 = document.getElementById("texte_bloc2");
 
     document.body.addEventListener("keydown",(event) => {
         if (event.keyCode == 32) {
-            texte_bloc2.style.color = "red";//cest vraiment codé avec le cul (si on peut parler de code)
-            texte_bloc.style.color = "red";
-            texte_bloc2.innerHTML="";
-            texte_bloc.innerHTML="Extraire plus d'informations <a href='verite_tangramique.html'>└→</a>";
+
+            document.location.href="verite_tangramique.html"; 
+
         }
     },true, );
 
