@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: monospace, 'Courier New', Courier;
+            font-size: 1em;
+        }
+        #texte_bloc{
+        }
+    </style>
+</head>
+<body>
+
+   
+
+    <img src="cube.gif" alt="rubik's cube">
+
+    <div>
+        <p id="texte_bloc"></p>
+    </div>
+
+
+    <script>
+
+
+
+
+var lignes = [];
+var adr=-1;
+var duree=2000;
+
+var texte_bloc = document.getElementById("texte_bloc");
+
+    function affiche() { 
+
+        adr++;
+        if (adr<lignes.length){
+
+            texte_bloc.innerHTML=lignes[adr];
+
+        mots_list =  (lignes[adr]).split('');
+        nb_mots = mots_list.length;
+
+        duree = 100*nb_mots;
+
+        setTimeout(affiche, duree); 
+
+        } 
+        else{
+            adr=-1;
+            setTimeout(affiche, duree); 
+        }
+    }    
+
+    
+
+
+
+var str=`"range ce losange filigrane !"
+
+"est-ce que c'est l'or qui colore les anges ou les anges qui colorent l'orange ?"
+
+Sécuriser, Contenir, Protéger
+
+"j'ai un syndrome de stendhal, je n'arrive pas à m'en débarasser"
+
+"je metterais ma main à couper que tous ces fanatiques sont victimes d'hallucinations mais ils ne le diront jamais"
+
+Sécuriser, Contenir, Protéger
+
+"une Intelligence Abstraite & Autonome cherche à libérer mon esprit"
+
+Sécuriser, Contenir, Protéger
+
+Sécuriser, Contenir, Protéger
+
+`
+
+lignes = str.split('\n');
+                    affiche();
+
+
+
+    </script>
+    
+</body>
+</html>
