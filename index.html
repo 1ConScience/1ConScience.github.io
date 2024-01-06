@@ -118,12 +118,12 @@ span[class^="dot-"]{
 
 
     <canvas width="204" height="120"></canvas>
-    <p><em id="clique" >▲</em></p>
+
 
 
     <div class="wrapper">
         <div class="loading-text"> <!--Loading-text-->
-          <h1>ENDING
+          <h1 id="fin_interminable">ENDING
             <span class="dot-one"> .</span>
             <span class="dot-two"> .</span>
             <span class="dot-three"> .</span>
@@ -245,10 +245,10 @@ span[class^="dot-"]{
 
     console.log(last_3_char);
 if(last_3_char == "#red" ){
-  document.getElementById("clique").setAttribute("style","color:red");
+  document.getElementById("fin_interminable").setAttribute("style","color:red");
 }
 if(last_3_char=="blue"){
-  document.getElementById("clique").setAttribute("style","color:blue");
+  document.getElementById("fin_interminable").setAttribute("style","color:blue");
 }
 
 
