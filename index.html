@@ -22,7 +22,9 @@
 
 
 
-
+.wrapper{
+  margin-top: 5em;
+}
 
 
 
@@ -116,7 +118,7 @@ span[class^="dot-"]{
 
 
     <canvas width="204" height="120"></canvas>
-
+    <p><em id="clique" >clique ↑</em></p>
 
 
     <div class="wrapper">
@@ -128,6 +130,7 @@ span[class^="dot-"]{
           </h1>
         </div> <!--/Loading-text-->
       </div> <!-- /Wrapper -->
+
 
 
 
@@ -224,6 +227,31 @@ span[class^="dot-"]{
     setTimeout(matrix_reload, 125);
 
   
+
+
+
+
+
+
+
+
+
+
+
+
+    var urlcourante = document.location.href; 
+
+    var last_3_char = urlcourante.substr(urlcourante.length-4, urlcourante.length-1);
+
+    console.log(last_3_char);
+if(last_3_char == "#red" ){
+  document.getElementById("clique").setAttribute("style","color:red");
+}
+if(last_3_char=="blue"){
+  document.getElementById("clique").setAttribute("style","color:blue");
+}
+
+
     </script>
 
 
