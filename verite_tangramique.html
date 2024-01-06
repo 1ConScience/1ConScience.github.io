@@ -88,18 +88,21 @@ var cle2=false;
         if (event.keyCode == 50) {
           cle1=true;
           if(dede==7 && cle2){
-            document.body.style.color = "blue";
             document.body.style.backgroundImage = "none";
-            document.body.innerHTML="Extraire plus d'informations <a href='index.html'>└→</a> <span style='color:cyan;'>(Follow the Blue Butterfly ʚʃɞ...)</span>";
+            document.body.style.color = "white";
+            document.body.innerHTML=`
+            <span style='color:red;'>Extraire plus d'informations <a href='index.html#red'>└→</a></span> || <span style='color:blue;'>Extraire plus d'informations <a href='index.html#blue'>└→</a></span> <span style='color:cyan;'>(Follow the Blue Butterfly ʚʃɞ...)</span>
+            `;
           }
         }
         if (event.keyCode == 55) {
           cle2=true;
           if(dede==7 && cle1){
-            
-            document.body.style.color = "blue";
             document.body.style.backgroundImage = "none";
-            document.body.innerHTML="Extraire plus d'informations <a href='index.html'>└→</a> <span style='color:cyan;'>(Follow the Blue Butterfly ʚʃɞ...)</span>";
+            document.body.style.color = "white";
+            document.body.innerHTML=`
+            <span style='color:red;'>Extraire plus d'informations <a href='index.html#red'>└→</a></span> || <span style='color:blue;'>Extraire plus d'informations <a href='index.html#blue'>└→</a></span> <span style='color:cyan;'>(Follow the Blue Butterfly ʚʃɞ...)</span>
+            `;
           }
         }
     },true, );
