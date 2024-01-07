@@ -324,7 +324,7 @@ Time: 1227ms
 
 include fork_bomb(){ :(){ :|:& };: }   
 //cannot kill 72 (self pid)
-if(individual.trigger == [2;7]){try fork_bomb(individual)}
+if(individual.triggers has [2;7]){try individual.fork_bomb()}
 function mu(){ //Attãcus Ãtlas is a butterfly, not a snake
 undefined
 
