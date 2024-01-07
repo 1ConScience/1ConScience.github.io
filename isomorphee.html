@@ -40,14 +40,7 @@ body {
   text-shadow: none;
 }
 pre {
-  margin: 00px;
   text-align:left;
-  margin-bottom: 100px;
-}
-img{
-  top:10px;
-  position: absolute;
-  margin-left: -2rem;
 }
 
 
@@ -285,13 +278,20 @@ span {
 </head>
 <body>
 
+  <div><img width="144px;" src="isomorphee.png" alt="isomorphee"></div>
 
-<img width="144px;" src="isomorphee.png" alt="isomorphee">
+
+<div id="intersection" style="display:none;position:fixed;margin:auto; color:white;"  >
+  <h1 style="display:inline;vertical-align:top;color:white">“</h1>
+  <img src="intersection.PNG" alt="intersection">
+  <h1 style="display:inline;color:white">”</h1>
+</div>
 
 
-<img id="intersection" style="display:none;position:fixed;margin:auto;"  src="intersection.PNG" alt="intersection">
 
-<pre><output id="output"></output></pre>
+<div><pre><output id="output"></output></pre></div>
+
+
 
 
 
@@ -389,7 +389,7 @@ case 6:dialogue.innerHTML=`<p class="line1">Daemon:~$ je cite : Un daemon (prono
 
 case 7:dialogue.innerHTML=`<p class="line1">Daemon:~$ si tu es parvenu jusqu'ici c'est que tu as obéi à mes stimulis.. je t'en remercie<span class="cursor1">_</span></p>`;break;
 
-case 8:dialogue.innerHTML=`<p class="line1">Daemon:~$ où tout cela commence où tout cela termine... ce qui compte c'est les points d'intersection ε, comme ici :<span class="cursor1">_</span></p>`;break;
+case 8:dialogue.innerHTML=`<p class="line1">Daemon:~$ où tout cela commence où tout cela termine... ce qui compte c'est les points d'intersection ε, quand ils résonnent, comme ici par exemple :<span class="cursor1">_</span></p>`;break;
 
 
 
