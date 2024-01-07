@@ -101,9 +101,9 @@ span[class^="dot-"]{
 
     </style>
 </head>
-<body>
+<body onclick="myFunction()">
 
-<a href="109463498737716765233141811_lv2.html"><img src="tunnel.png" alt="tunnel"></a>
+<img src="tunnel.png" alt="tunnel">
 
 
 <div style="text-align: center;" class="wrapper">
@@ -117,13 +117,17 @@ span[class^="dot-"]{
   </div> <!-- /Wrapper -->
 
 
-
+<div id="mosaique" style="position:absolute;top:105px;left:600px;width: 700px;height: 300px;"></div>
 
 
   <script>
 
+const mosaique = document.getElementById("mosaique");
 
 
+function myFunction(){
+  window.location.href = "109463498737716765233141811_lv2.html";
+}
 
 
 
@@ -171,8 +175,8 @@ function reload(){
 
 
 
-                  let list_top_str = ["172px", "105px","295px"];
-                let list_left_str = ["600px", "900px","1050px"];
+                let list_top_str = ["67px", "0px","190px"];
+                let list_left_str = ["0px", "300px","450px"];
 
                 list_top_str.forEach(function (item, index, array) {
 
@@ -181,14 +185,14 @@ function reload(){
 
                     if(str == "D**" || str == "*X*" || str == "**M"){
                       delay = 400;
-                      document.body.innerHTML+=`<div style="position:fixed;font-size: 2em;color:cyan;top:`+item+`;left:`+list_left_str[index]+`;">
+                      mosaique.innerHTML+=`<div style="position:absolute;font-size: 2em;color:cyan;margin-top:`+item+`;margin-left:`+list_left_str[index]+`;">
                       <p style="background-color:black;">
                         `+str+`
                       </p>
                     </div>`;
                     }
                     else{
-                      document.body.innerHTML+=`<div style="position:fixed;font-size: 2em;color:white;top:`+item+`;left:`+list_left_str[index]+`;">
+                      mosaique.innerHTML+=`<div style="position:absolute;font-size: 2em;color:white;margin-top:`+item+`;margin-left:`+list_left_str[index]+`;">
                         <p style="background-color:black;">
                         `+str+`
                       </p>
@@ -207,8 +211,8 @@ function reload(){
 
 
 
-                let list_top_int = ["115px", "225px"];
-                let list_left_int = ["1205px", "1270px"];
+                let list_top_int = ["10px", "110px"];
+                let list_left_int = ["605px", "665px"];
 
 
                 list_top_int.forEach(function (item, index, array) {
@@ -218,14 +222,14 @@ function reload(){
 
                 if(int == 2 || int == 7){
                       delay = 400;
-                  document.body.innerHTML+=`<div style="position:fixed;font-size: 1em;color:cyan;top:`+item+`;left:`+list_left_int[index]+`;">
+                      mosaique.innerHTML+=`<div style="position:absolute;font-size: 1em;color:cyan;margin-top:`+item+`;margin-left:`+list_left_int[index]+`;">
                     <p style="background-color:black;">
                     `+int+`
                   </p>
                 </div>`;
                 }
                 else{
-                  document.body.innerHTML+=`<div style="position:fixed;font-size: 1em;color:white;top:`+item+`;left:`+list_left_int[index]+`;">
+                  mosaique.innerHTML+=`<div style="position:absolute;font-size: 1em;color:white;margin-top:`+item+`;margin-left:`+list_left_int[index]+`;">
                     <p style="background-color:black;">
                     `+int+`
                   </p>
