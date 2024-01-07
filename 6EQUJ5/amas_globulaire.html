@@ -20,6 +20,11 @@
           position:absolute;
           top:0;
           left:0;
+          z-index: 1;
+        }
+
+        canvas{
+          z-index: 7;
         }
 
 
@@ -115,15 +120,15 @@ function ping(){
   });
 
 
-  var x = Math.floor(Math.random() * 90);
-  var y = Math.floor(Math.random() * 90);
+  var x = Math.floor(Math.random() * 80);
+  var y = Math.floor(Math.random() * 80);
   var size = Math.floor(Math.random() * 9);
 
   x++;y++;size++;
 
   var fenetre = document.querySelector('#fenetre');
 
-  fenetre.innerHTML+='<h1 style="font-size:'+size+'em;position:fixed;top:'+x+'%;left:'+y+'%;color:black;">Ping ♪</h1>';
+  fenetre.innerHTML+='<h1 style="font-size:'+size+'em;position:fixed;top:'+x+'%;left:'+y+'%;color:black;margin-top:200px;">Ping ♪</h1>';
 
 
 
