@@ -45,6 +45,36 @@ var hauteur_=0;
 
 const canvas = document.getElementById("canvas");
 
+function dessine_reverse() {
+
+
+    const ctx = canvas.getContext("2d");
+
+    const image = new Image(1280, 720); // Using optional size for image
+    image.onload = drawImageActualSize; // Draw when image has loaded
+
+    // Load an image of intrinsic size 300x227 in CSS pixels
+    image.src = "auto.png";
+
+    function drawImageActualSize() {
+    // Use the intrinsic size of image in CSS pixels for the canvas element
+    canvas.width = this.naturalWidth;
+    canvas.height = this.naturalHeight;
+
+
+    // To use the custom size we'll have to specify the scale parameters
+    // using the element's width and height properties - lets draw one
+    // on top in the corner:
+    ctx.drawImage(this, 0, 0, this.width, hauteur_, 0, 0, this.width, hauteur_)
+    ctx.drawImage(this, 0, 0, this.width, hauteur_, 0, 0, this.width, hauteur_)
+    }
+
+    hauteur_++;
+    if(hauteur_>720) setTimeout(dessine,30);
+    else setTimeout(dessine_reverse,30);
+
+}
+
 function dessine() {
 
 
@@ -70,7 +100,8 @@ function dessine() {
     }
 
     hauteur_++;
-    setTimeout(dessine,30);
+    if(hauteur_>720) setTimeout(dessine_reverse,30);
+    else setTimeout(dessine,30);
 
 }
 
