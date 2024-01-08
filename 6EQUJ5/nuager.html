@@ -6,7 +6,7 @@
     <title>Autostéréogramme</title>
     <style>
         body{
-            background-color: black;
+            background-color:black;
             color: white;
             text-align: center;
             font-family: monospace, 'Courier New', Courier;
@@ -102,13 +102,19 @@ function traiter(){
 
         let zizi = key.search(/monade/gi);
         let nenette = key.search(/daemon/gi);
+        let kekette = key.search(/anagramme/gi);
 
         
-        if(zizi==-1 && nenette==-1){
+        if(zizi==-1 && nenette==-1 && kekette==-1){
             texte_bloc.innerHTML+=key+" ";
         }
         else{
-            texte_bloc.innerHTML+="<span style='color:cyan;'>"+key+"</span> ";
+            if(kekette==-1){
+                texte_bloc.innerHTML+="<span style='color:cyan;'>"+key+"</span> ";
+            }
+            else{
+                texte_bloc.innerHTML+="<span style='color:greenyellow;'><a style='text-decoration:none;color:greenyellow;' href='analogique.html'>"+key+"</a></span> ";
+            }
         }
 
     }

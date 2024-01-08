@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>analogique</title>
+        <style>
+            body{
+                text-align:center;
+                margin:0;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <body>
+
+<div style="position:fixed;bottom:2em;right:2em;text-align:right;">
+    <button style="padding:1em;font-size: 1em;" onclick="mystere()" id="button" type="button">✞ Mũrir</button>
+</div>
+ 
+
+        <div style="margin-bottom: 2em;">
+            <p>c'est comme si cette chose avait le monde<br>
+                il y a toujours une nouvelle porte<br>
+                mais jamais notre esprit n'est nouveau<br>
+                ce moment premier où le temps <span style="color:#ff1e00;">l'étant</span> et les nombres font ma conscience<br>
+                en partie vérité miroir<br>
+                <span style="color:#ff1e00;">mémoire</span> montre le chemin de mes pensées</p>
+            
+        </div>
+
+
+
+
+
+    <img id="auto" style="position:absolute;top:200px;" src="auto.png" alt="Autostéréogramme">
+
+
+
+    <canvas style="position:absolute;top:200px;" id="canvas"  ></canvas>
+    
+
+
+<script>
+
+var hauteur_=0;
+
+const canvas = document.getElementById("canvas");
+
+function dessine() {
+
+
+    const ctx = canvas.getContext("2d");
+
+    const image = new Image(1280, 720); // Using optional size for image
+    image.onload = drawImageActualSize; // Draw when image has loaded
+
+    // Load an image of intrinsic size 300x227 in CSS pixels
+    image.src = "auto_lignes.png";
+
+    function drawImageActualSize() {
+    // Use the intrinsic size of image in CSS pixels for the canvas element
+    canvas.width = this.naturalWidth;
+    canvas.height = this.naturalHeight;
+
+
+    // To use the custom size we'll have to specify the scale parameters
+    // using the element's width and height properties - lets draw one
+    // on top in the corner:
+    ctx.drawImage(this, 0, 0, this.width, hauteur_, 0, 0, this.width, hauteur_)
+    ctx.drawImage(this, 0, 0, this.width, hauteur_, 0, 0, this.width, hauteur_)
+    }
+
+    hauteur_++;
+    setTimeout(dessine,30);
+
+}
+
+dessine();
+
+
+var width = document.body.clientWidth;
+var pos = (width/2)-640;
+canvas.style.left=pos+"px";
+
+const auto = document.getElementById("auto");
+auto.style.left=pos+"px";
+
+console.log(width);
+
+
+/*
+var increment = 0;
+
+function charge(){
+    
+    //context.drawImage(imageObject,XClipFromSource, YClipFromSource, widthToClipFromSource, heightToClipFromSource,canvasX, canvasY, canvasWidth, canvasHeight);
+    
+    document.getElementById("bl2").style.display = "block";
+
+    increment++;
+
+    setTimeout(charge,1000);
+}
+
+
+
+
+
+document.getElementById("bl1").style.display = "block";
+setTimeout(charge,1000);
+
+*/
+
+
+
+
+
+function mystere(){
+    window.location.href = "../verite_cubique.html#mũtation";
+}
+
+
+
+
+
+
+</script>
+
+    </body>
+</html>
