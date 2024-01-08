@@ -41,7 +41,19 @@
 
 <script>
 
+var alterne = true;
+function clignote(){
+    if(alterne){alterne=false;document.getElementById("auto").src="auto_stereo.png";}
+    else{alterne=true;document.getElementById("auto").src="auto.png";}
+    setTimeout(clignote,100);
+}
+
+
+
 var hauteur_=0;
+
+var timing = 5;
+var tour_de_boucle = 1;
 
 const canvas = document.getElementById("canvas");
 
@@ -54,7 +66,7 @@ function dessine_reverse() {
     image.onload = drawImageActualSize; // Draw when image has loaded
 
     // Load an image of intrinsic size 300x227 in CSS pixels
-    image.src = "auto.png";
+    image.src = "auto_lignes.png";
 
     function drawImageActualSize() {
     // Use the intrinsic size of image in CSS pixels for the canvas element
@@ -66,12 +78,16 @@ function dessine_reverse() {
     // using the element's width and height properties - lets draw one
     // on top in the corner:
     ctx.drawImage(this, 0, 0, this.width, hauteur_, 0, 0, this.width, hauteur_)
-    ctx.drawImage(this, 0, 0, this.width, hauteur_, 0, 0, this.width, hauteur_)
     }
 
-    hauteur_++;
-    if(hauteur_>720) setTimeout(dessine,30);
-    else setTimeout(dessine_reverse,30);
+    hauteur_--;
+    if(hauteur_==0){
+        tour_de_boucle++;
+        timing = 1;
+        setTimeout(clignote,100);
+        setTimeout(dessine,timing);
+    }
+    else{setTimeout(dessine_reverse,timing);}
 
 }
 
@@ -96,12 +112,11 @@ function dessine() {
     // using the element's width and height properties - lets draw one
     // on top in the corner:
     ctx.drawImage(this, 0, 0, this.width, hauteur_, 0, 0, this.width, hauteur_)
-    ctx.drawImage(this, 0, 0, this.width, hauteur_, 0, 0, this.width, hauteur_)
     }
 
     hauteur_++;
-    if(hauteur_>720) setTimeout(dessine_reverse,30);
-    else setTimeout(dessine,30);
+    if(hauteur_>720){hauteur_=720;setTimeout(dessine_reverse,timing);}
+    else{setTimeout(dessine,timing);}
 
 }
 
@@ -114,8 +129,6 @@ canvas.style.left=pos+"px";
 
 const auto = document.getElementById("auto");
 auto.style.left=pos+"px";
-
-console.log(width);
 
 
 /*
