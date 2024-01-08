@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXP - Follow the Blue Butterfly ʚʃɞ...</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            font-family: monospace, 'Courier New', Courier;
+            font-size: 1em;
+            padding-top: 2em;
+            padding-left:2em;
+            background-image: url(fractal.gif);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        div{
+            margin-bottom: 2em;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div>    <a href="realise.html">
+        <img width="50px" src="exe_icon.jpg" alt="exe_icon">
+        <br>g_tout_su.exe
+    </a></div>
+ 
+
+
+<div>    <a href="textes/0.html">
+    <img width="50px" src="txt_icon.png" alt="txt_icon">
+    <br>0.txt
+</a></div>
+
+
+<div>    <a href="textes/patient_0.html">
+    <img width="50px" src="txt_icon.png" alt="txt_icon">
+    <br>patient_0.txt
+</a></div>
+
+    
+    <div>    <a href="textes/Synesthésia.html">
+        <img width="50px" src="txt_icon.png" alt="txt_icon">
+        <br>Synesthésia.txt
+    </a> </div>
+    
+
+
+<div>    <a href="textes/encore_ce_reve_etrange.PNG">
+    <img width="50px" src="textes/encore_ce_reve_etrange.PNG" alt="txt_icon">
+    <br>encore_ce_reve_etrange.png
+</a> </div>
+
+
+
+<div>    <a href="textes/mũ_incomplet.txt">
+    <img width="50px" src="txt_icon.png" alt="txt_icon">
+    <br>mũ_incomplet.txt
+</a> </div>
+
+ 
+
+<div>    <a href="textes/Le_Philtre_damour.html">
+    <img width="50px" src="txt_icon.png" alt="txt_icon">
+    <br>Le_Philtre_damour.txt
+</a> </div>
+
+ 
+
+
+
+
+<script>
+
+
+
+
+
+
+var urlcourante = document.location.href; 
+
+var last_3_char = urlcourante.substr(urlcourante.length-6, urlcourante.length-1);
+
+console.log(last_3_char);
+if(last_3_char == "tation" ){
+    document.body.style.backgroundColor = "white";
+    document.body.style.backgroundImage = "url('6EQUJ5/link.png')";
+
+
+
+    document.body.innerHTML+=`
+    <div>    <a href="textes/Alice_le_blob.PNG">
+    <img width="50px" src="textes/Alice_le_blob.PNG" alt="txt_icon">
+    <br>Alice_le_blob.png
+</a> </div>
+    `;
+
+
+}
+
+
+
+
+  
+  
+    
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
