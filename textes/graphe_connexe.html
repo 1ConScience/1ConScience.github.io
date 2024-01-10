@@ -12,8 +12,6 @@
         #graphe
         {
           display: inline-block;
-          width: 1200px;
-          height: 900px;
 
           background-color: white;
         }
@@ -29,10 +27,18 @@
     <script type="text/javascript">
 
         
+let container = document.getElementById('graphe');
+
+    var height = window.innerHeight;
+    var width = window.innerWidth;
+
+console.log(height);
+
+    container.style.width = width+"px";
+container.style.height = height+"px";
+        
         let nodes = new vis.DataSet([]);
         let edges = new vis.DataSet([]);
-        
-        let container = document.getElementById('graphe');
         
         let data = {
           nodes: nodes,
