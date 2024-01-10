@@ -1,0 +1,89 @@
+<html>
+<head>
+    <title>Feedback Loop</title>
+    <style>
+        body{
+            padding:0;
+            margin:0;
+        }
+        iframe{
+            border:0;
+        }
+    </style>
+</head>
+<body>
+    
+
+
+
+    <iframe 
+    id="page"
+    src="https://1conscience.github.io/">
+  </iframe>
+
+
+<script>
+
+
+let container = document.getElementById('page');
+
+var height = window.innerHeight;
+var width = window.innerWidth;
+
+container.style.width = width+"px";
+container.style.height = height+"px";
+
+
+
+let pages = ["https://lechemindetraverse.tumblr.com/", "https://1conscience.github.io/#red","https://1conscience.github.io/verite_carre.html","https://1conscience.github.io/verite_micronde.html","https://1conscience.github.io/verite_fractal.html"];
+pages.push("https://1conscience.github.io/realise.html","https://1conscience.github.io/verite_tangramique.html","https://1conscience.github.io/#blue");
+pages.push("https://lechemindetraverse.tumblr.com/","https://portedecellier.tumblr.com/","https://1conscience.github.io/109463498737716765233141811.html");
+pages.push("https://1conscience.github.io/109463498737716765233141811_lv2.html","https://1conscience.github.io/109463498737716765233141811_lv3.html","https://1conscience.github.io/109463498737716765233141811_lv4.html","https://1conscience.github.io/109463498737716765233141811_lv5.html");
+pages.push("https://isomorphee.tumblr.com/","https://docs.google.com/document/d/1ONzGpkOzEWfLy1pROiJg5AMw-bYYdV7xxSNSSQSKnEI/","https://1conscience.github.io/verite_superieure.html");
+pages.push("https://1conscience.github.io/shell.html","https://docs.google.com/document/d/1MPsOCzlcFg4mnDU5MtWZdRLIUYOb8LKqw2vMsBy-tA4/","https://annuel2.framapad.org/p/isomorphyz7z7-a599?lang=fr");
+pages.push("https://1conscience.github.io/preuve.png","https://1conscience.github.io/6EQUJ5/","https://1conscience.github.io/6EQUJ5/amas_globulaire.html");
+pages.push("https://1conscience.github.io/6EQUJ5/Autost%C3%A9r%C3%A9ogramme.html","https://1conscience.github.io/6EQUJ5/analogique.html","https://1conscience.github.io/verite_fractal.html#m%C5%A9tation");
+pages.push("https://1conscience.github.io/textes/feedback_divergent.html");
+
+var timing = 2000;
+
+var cpt = 0;
+
+function loop(){
+
+    if(cpt<pages.length){
+        container.src = pages[cpt];
+        cpt++;
+
+        setTimeout(loop, timing);
+    }
+    else{
+        timing = timing/2;
+        //loop_reverse();
+    }
+
+}
+
+function loop_reverse(){
+
+    if(cpt>0){
+        cpt--;
+        container.src = pages[cpt];
+
+        setTimeout(loop_reverse, timing);
+    }
+    else{
+        loop();
+    }
+
+}
+
+
+loop();
+
+
+</script>
+
+</body>
+
+</html>
