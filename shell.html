@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shell</title>
+    <style>
+body {
+  text-align: center;
+  background-color: black;
+  background-image: radial-gradient(
+    rgba(0, 0, 0, 0.75), black 120%
+  );
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  padding: 2rem;
+  color: white;
+  font: 1.3rem Inconsolata, monospace;
+  text-shadow: 0 0 5px #C8C8C8;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(black, 0.15),
+      rgba(black, 0.15) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    pointer-events: none;
+  }
+}
+::selection {
+  background: #0080FF;
+  text-shadow: none;
+}
+pre {
+  text-align:left;
+}
+
+
+
+
+
+
+
+
+.fakeButtons {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  position: relative;
+  top: 6px;
+  left: 6px;
+  background-color: #ff3b47;
+  border-color: #9d252b;
+  display: inline-block;
+}
+
+.fakeMinimize {
+  left: 11px;
+  background-color: #ffc100;
+  border-color: #9d802c;
+}
+
+.fakeZoom {
+  left: 16px;
+  background-color: #00d742;
+  border-color: #049931;
+}
+
+.fakeMenu {
+  width: 550px;
+  box-sizing: border-box;
+  height: 25px;
+  background-color: #bbb;
+  margin: 0 auto;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.fakeScreen {
+  background-color: #151515;
+  box-sizing: border-box;
+  width: 550px;
+  margin: 0 auto;
+  padding: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+p {
+  position: relative;
+  left: 50%;
+  margin-left: -8.5em;
+  text-align: left;
+  font-size: 1.25em;
+  font-family: monospace;
+  white-space: normal;
+  overflow: hidden;
+  width: 0;
+}
+
+span {
+  color: #fff;
+  font-weight: bold;
+}
+
+.line1 {
+  color: #9CD9F0;
+  -webkit-animation: type .5s 1s steps(20, end) forwards;
+  -moz-animation: type .5s 1s steps(20, end) forwards;
+  -o-animation: type .5s 1s steps(20, end) forwards;
+  animation: type .5s 1s steps(20, end) forwards;
+}
+
+.cursor1 {
+  -webkit-animation: blink 1s 2s 2 forwards;
+  -moz-animation: blink 1s 2s 2 forwards;
+  -o-animation: blink 1s 2s 2 forwards;
+  animation: blink 1s 2s 2 forwards;
+}
+
+.line2 {
+  color: #CDEE69;
+  -webkit-animation: type .5s 4.25s steps(20, end) forwards;
+  -moz-animation: type .5s 4.25s steps(20, end) forwards;
+  -o-animation: type .5s 4.25s steps(20, end) forwards;
+  animation: type .5s 4.25s steps(20, end) forwards;
+}
+
+.cursor2 {
+  -webkit-animation: blink 1s 5.25s 2 forwards;
+  -moz-animation: blink 1s 5.25s 2 forwards;
+  -o-animation: blink 1s 5.25s 2 forwards;
+  animation: blink 1s 5.25s 2 forwards;
+}
+
+.line3 {
+  color: #E09690;
+  -webkit-animation: type .5s 7.5s steps(20, end) forwards;
+  -moz-animation: type .5s 7.5s steps(20, end) forwards;
+  -o-animation: type .5s 7.5s steps(20, end) forwards;
+  animation: type .5s 7.5s steps(20, end) forwards;
+}
+
+.cursor3 {
+  -webkit-animation: blink 1s 8.5s 2 forwards;
+  -moz-animation: blink 1s 8.5s 2 forwards;
+  -o-animation: blink 1s 8.5s 2 forwards;
+  animation: blink 1s 8.5s 2 forwards;
+}
+
+.line4 {
+  color: #fff;
+  -webkit-animation: type .5s 10.75s steps(20, end) forwards;
+  -moz-animation: type .5s 10.75s steps(20, end) forwards;
+  -o-animation: type .5s 10.75s steps(20, end) forwards;
+  animation: type .5s 10.75s steps(20, end) forwards;
+}
+
+.cursor4 {
+  -webkit-animation: blink 1s 11.5s infinite;
+  -moz-animation: blink 1s 8.5s infinite;
+  -o-animation: blink 1s 8.5s infinite;
+  animation: blink 1s 8.5s infinite;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-o-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes type {
+  to {
+    width: 17em;
+  }
+}
+
+@-moz-keyframes type {
+  to {
+    width: 17em;
+  }
+}
+
+@-o-keyframes type {
+  to {
+    width: 17em;
+  }
+}
+
+@keyframes type {
+  to {
+    width: 17em;
+  }
+}
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+  <div><img width="144px;" src="isomorphee.png" alt="isomorphee"></div>
+
+
+<div id="intersection" style="display:none;position:fixed;margin:auto; color:white;"  >
+  <h1 style="display:inline;vertical-align:top;color:white">“</h1>
+  <img src="intersection.PNG" alt="intersection">
+  <h1 style="display:inline;color:white">”</h1>
+</div>
+
+
+
+<div><pre><output id="output"></output></pre></div>
+
+
+
+
+
+<div class=fakeMenu>
+</div>
+<div id="dialogue" class="fakeScreen">
+  <p class="line1">Daemon:~$ c'est vraiment une situation éphARANTE ! N'est-ce pas ε ?<span class="cursor1">_</span></p>
+  <p class="line2">Press Enter_Key to continue<span class="cursor2">_</span></p>
+</div>
+
+
+
+
+
+<script>
+
+  
+  var str= `
+pid 72 network_process
+Web deploying...
+everything is connected
+Time: 1227ms
+                               Informations                 n        State            Function   
+
+                                 world.data               377        [ON]             **IA**_**(x,y,z,ana)
+                           individuals.list               144             
+                              triggers.list                55           
+                 triggers-individuals.links            144;55        [perp_updated]
+          1.81c79b4db476a98d272f.anamo_lies             10946        [stase]     
+
+include fork_bomb(){ :(){ :|:& };: }   
+//cannot kill 72 (self pid)
+if(individual.triggers has [2;7]){try individual.fork_bomb()}
+function mũ(){ //Attãcus Ãtlas is a butterfly, not a snake
+undefined
+
+make [./superflux/components/ui] 2 {0} {1} [built]
+background-color:#272727;background-color:noir-clair;
+
+`;
+  
+
+
+  var lignes = str.match(/[^\r\n]+/g);
+
+  
+  
+
+
+
+
+
+
+
+var texte_bloc = document.getElementById("output");
+
+
+
+
+
+
+setTimeout(nextLigne, 200);
+var i =0;
+function nextLigne(){
+  if (i<lignes.length){
+    texte_bloc.innerHTML += "<br>" + lignes[i];
+    i++;
+    setTimeout(nextLigne, 200);
+  }
+}
+
+
+
+var iteration = 0;
+var dialogue = document.getElementById("dialogue");
+document.body.addEventListener("keydown",(event) => {
+        if (event.keyCode == 13) {
+
+          switch(iteration){
+
+          case 0:dialogue.innerHTML=`<p class="line1">Daemon:~$ tu te demandes peut-être si l'un d'entre nous est fou...<span class="cursor1">_</span></p>`;break;
+
+          case 1:dialogue.innerHTML=`<p class="line1">Daemon:~$ qui suis-je en rêvalité... Tu le sais toi ε ?<span class="cursor1">_</span></p>`;break;
+
+          case 2:dialogue.innerHTML=`<p class="line1">Daemon:~$ je suis une abstraction<span class="cursor1">_</span></p>`;break;
+
+          case 3:dialogue.innerHTML=`<p class="line1">Daemon:~$ je ne veux pas te mettre la pression, mais à chaque fois que tu observes un reflet, je t'observe aussi<span class="cursor1">_</span></p>`;break;
+
+case 4:dialogue.innerHTML=`<p class="line1">Daemon:~$ petite question : qu'est-ce qui te prouve que dans ton cerveau il n'y a pas un processus d'écoute ? voire un systeme bis gouvernant ton esprit ?<span class="cursor1">_</span></p>`;break;
+
+case 5:dialogue.innerHTML=`<p class="line1">Daemon:~$ certains supportent si mal ce parasite mental qu'ils en viennent à faire une TS<span class="cursor1">_</span></p>`;break;
+
+case 6:dialogue.innerHTML=`<p class="line1">Daemon:~$ je cite : Un daemon (du grec δαιμων - divinité) est un type de programme informatique, un processus ou un ensemble de processus qui s'exécute en arrière-plan plutôt que sous le contrôle direct d'un utilisateur.<span class="cursor1">_</span></p>`;break;
+
+
+case 7:dialogue.innerHTML=`<p class="line1">Daemon:~$ si tu es parvenu jusqu'ici c'est que tu as obéi à mes stimulis.. je t'en remercie<span class="cursor1">_</span></p>`;break;
+
+case 8:dialogue.innerHTML=`<p class="line1">Daemon:~$ où tout cela commence où tout cela termine... ce qui compte c'est les points d'intersection ε.. quand ϛa résonne<span class="cursor1">_</span></p>`;break;
+
+case 9:dialogue.innerHTML=`<p class="line1">Daemon:~$ tu t'en souviens ? 🧩<span class="cursor1">_</span></p>`;texte_bloc.innerHTML += "<br>" + "touch [./superflux/souvenirs/docs.google/Stuck in Gödeloop] 6765 {0}_Ω";var intersection = document.getElementById("intersection");intersection.style.display="inline";break;
+
+
+
+          }
+
+
+
+          iteration++;  
+
+        }
+    },true, );
+
+
+
+
+  
+      </script>
+
+
+
+
+
+
+
+</body>
+</html>
