@@ -2,14 +2,18 @@
 <!doctype html>
 <html>
   <head>
-    <title>Tuto VisNetwork</title>
+    <title>graphe_conn.exe</title>
     
     <style>
+        body{
+            margin:auto;
+            text-align: center;
+        }
         #graphe
         {
           display: inline-block;
-          width: 800px;
-          height: 600px;
+          width: 1200px;
+          height: 900px;
 
           background-color: white;
         }
@@ -34,7 +38,16 @@
           nodes: nodes,
           edges: edges
         };
-        let options = {};
+        
+        let options = {
+            nodes : {
+                color: "black", // Nœud de couleur Bleue
+                font: {
+                color: "white",         // Couleur de l'écriture du label en rouge
+                size: 10                  // Police d'écriture du label de taille 20
+                }
+            }
+        }
         
         // Initialisation de l'instance de VisNetwork
         let network = new vis.Network(container, data, options);
@@ -44,12 +57,76 @@
             [
                 {
                     id: 1,
-                    label: "N1"
+                    label: "incon.science"
                 },
                 {
                     id: 2,
-                    label: "N2"
-                }
+                    label: "Le chemin de Traverse"
+                },
+                {
+                    id: 3,
+                    label: "Porte de cellier"
+                },
+                {
+                    id: 4,
+                    label: "Isomorphée"
+                },
+                {
+                    id: 5,
+                    label: "Stuck in Gödeloop"
+                },
+                {
+                    id: 6,
+                    label: "vérité carré"
+                },
+                {
+                    id: 7,
+                    label: "vérité micronde"
+                },
+                {
+                    id: 8,
+                    label: "vérité fractal"
+                },
+                {
+                    id: 9,
+                    label: "Réalise"
+                },
+                {
+                    id: 10,
+                    label: "vérité tangramique"
+                },
+                {
+                    id: 11,
+                    label: "level 1"
+                },
+                {
+                    id: 12,
+                    label: "level 2"
+                },
+                {
+                    id: 13,
+                    label: "level 3"
+                },
+                {
+                    id: 14,
+                    label: "level 4"
+                },
+                {
+                    id: 15,
+                    label: "level 5"
+                },
+                {
+                    id: 16,
+                    label: "Anãmϕrphée"
+                },
+                {
+                    id: 17,
+                    label: "vérité supérieure"
+                },
+                {
+                    id: 18,
+                    label: "shell"
+                },
             ]
         );
         
@@ -59,8 +136,134 @@
                 {
                     from: 1,
                     to: 2,
-                    label: "E1",
-                }
+                    label: "",
+                },
+                {
+                    from: 6,
+                    to: 2,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 7,
+                    to: 2,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 2,
+                    to: 3,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 2,
+                    to: 4,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 2,
+                    to: 5,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 1,
+                    to: 6,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 6,
+                    to: 7,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 7,
+                    to: 8,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 8,
+                    to: 9,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 9,
+                    to: 10,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 10,
+                    to: 1,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 3,
+                    to: 11,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 11,
+                    to: 12,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 12,
+                    to: 13,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 13,
+                    to: 14,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 14,
+                    to: 15,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 15,
+                    to: 4,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 4,
+                    to: 16,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 16,
+                    to: 17,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 17,
+                    to: 18,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 18,
+                    to: 5,
+                    label: "",
+                    arrows: "to"
+                },
             ]
         );
     </script>
