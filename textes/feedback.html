@@ -57,6 +57,24 @@ function loop(){
 
         setTimeout(loop, timing);
     }
+    else{
+        timing = timing/2;
+        loop_reverse();
+    }
+
+}
+
+function loop_reverse(){
+
+    if(cpt>0){
+        cpt--;
+        container.src = pages[cpt];
+
+        setTimeout(loop_reverse, timing);
+    }
+    else{
+        loop();
+    }
 
 }
 
