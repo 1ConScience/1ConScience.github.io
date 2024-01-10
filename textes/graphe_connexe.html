@@ -2,7 +2,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>graphe_conn.exe</title>
+    <title>graphe connexe</title>
     
     <style>
         body{
@@ -150,6 +150,10 @@
                 {
                     id: 24,
                     label: "analogique"
+                },
+                {
+                    id: 25,
+                    label: "graphe connexe"
                 },
             ]
         );
@@ -335,6 +339,12 @@
                     from: 24,
                     to: 8,
                     label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 8,
+                    to: 25,
+                    label: "(Vous êtes ici)",
                     arrows: "to"
                 },
             ]
