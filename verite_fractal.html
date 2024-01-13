@@ -21,6 +21,10 @@
             margin-bottom: 2em;
         }
 
+        audio::-webkit-media-controls-panel {
+        background-color: white;
+        }
+
     </style>
 </head>
 <body>
@@ -80,7 +84,7 @@
 
 <script>
 
-var taille_video = 110;
+var taille_video = 300;
 
 var wiwi = (window.innerWidth)/2;
 wiwi = wiwi - (taille_video/2);
@@ -124,12 +128,13 @@ if(last_3_char == "tation" ){
 
 
 
-<div style="position:absolute;left:`+wiwi+`px;top:363px;">
 
-    <iframe width="`+taille_video+`" height="100" src="https://www.youtube.com/embed/dz1gwujbgUc?si=piDkpecAI1LO7xAb&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+<div style="position:absolute;left:`+wiwi+`px;bottom:-1em;">
+
+    <audio controls src="6EQUJ5/reminiscence.mp3"></audio>
+    
 </div>
-
 
 
     `;
