@@ -38,7 +38,9 @@
 
     <canvas width="400" height="400"></canvas>
 
+    
 
+    
 
     <script src="https://unpkg.com/roughjs@4.6.6/bundled/rough.js" crossorigin="anonymous"></script>
 
@@ -152,13 +154,19 @@
             var num_index = Math.floor(Math.random() * lignes.length);
             contenu=lignes[num_index];
             document.body.innerHTML=contenu;
+
+
+
+
+
             setTimeout(affiche_bis, duree); 
 
         } 
         else{
           document.body.style.fontSize = "1em";
           document.body.style.color = "red";
-            document.body.innerHTML="Extraire plus d'informations <a href='verite_fractal.html'>└→</a>";
+            document.body.innerHTML="Extraire plus d'informations <a href='verite_fractal.html'>└→</a><br><img src='textes/madness.png' alt='madness' >";
+            
         }
 
     }
