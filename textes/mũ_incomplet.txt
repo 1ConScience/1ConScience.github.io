@@ -14,9 +14,8 @@ Avarice := vouloir tout conserver
 Avidité := vouloir toujours plus
 
 innocence  != ignorance
-simplicité != facilité
 maîtrise != contrôle 
-difficulté != complexité
+simplicité != facilité
 
 pratique
 
