@@ -52,7 +52,7 @@ console.log("oui, mais yen a un qui revient deux fois identique (chemin de trave
 
 var timing = 2000;
 
-var cpt = 0;
+var cpt = pages.length;
 
 function loop(){
 
@@ -71,6 +71,8 @@ function loop(){
 
 function loop_reverse(){
 
+
+
     if(cpt>0){
         cpt--;
         container.src = pages[cpt];
@@ -84,7 +86,7 @@ function loop_reverse(){
 }
 
 
-loop();
+loop_reverse();
 
 
 </script>
