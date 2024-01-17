@@ -41,109 +41,26 @@
 
 
     <canvas style="position:absolute;top:100px;" id="canvas"  ></canvas>
-
-    <img id="auto_bis" style="position:absolute;top:100px;display:none;" src="auto.png" alt="Autostéréogramme">
     
     <audio controls src="personne_ne_se_sauve_de_ϛa.mp3"></audio>
 
 <script>
-
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
-}
-
-
-function clignote_OLD(){
-
-    const expr = getRandomInt(6);
-    switch (expr) {
-    case 0:
-        document.getElementById("auto").src="auto.png";
-        break;
-    case 1:
-        document.getElementById("auto").src="auto_stereo.png";
-        break;
-    case 2:
-        document.getElementById("auto").src="auto_stereo_bis.png";
-        break;
-    case 3:
-        document.getElementById("auto").src="auto.png";
-        break;
-    case 4:
-        document.getElementById("auto").src="auto.png";
-        break;
-    case 5:
-        document.getElementById("auto").src="auto.png";
-        break;
-    default:
-        console.log(`Sorry, we are out of ${expr}.`);
-    }
-
-    let fasttime = getRandomInt(255)+1;
-
-    setTimeout(clignote,fasttime);
-}
-
-
-
-
-
-
-
-function clignote_new(){
-
-
-
-
-    let aleatoire = getRandomInt(2);
-
-    if(aleatoire==1){
-        auto_bis.style.display="inline-block";
-    }
-    else{
-        auto_bis.style.display="none";
-    }
-
-    let teatime = getRandomInt(172);
-
-    setTimeout(clignote_new,teatime);
-
-}
-
-
-
-
-
-
-
-
 
 var alterne = true;
 function clignote(){
     if(alterne){alterne=false;document.getElementById("auto").src="auto_stereo.png";}
     else{alterne=true;document.getElementById("auto").src="auto.png";}
     setTimeout(clignote,100);
-
-
-
-
-    
-
-
 }
 
 
 
 var hauteur_=0;
 
-var timing = 7;
-var tour_de_boucle = 0;
+var timing = 5;
+var tour_de_boucle = 1;
 
 const canvas = document.getElementById("canvas");
-
-
-
-
 
 function dessine_reverse() {
 
@@ -154,16 +71,7 @@ function dessine_reverse() {
     image.onload = drawImageActualSize; // Draw when image has loaded
 
     // Load an image of intrinsic size 300x227 in CSS pixels
-    image.src = "auto_lignes_bis.png";
-
-
-
-
-    const image_lignes_origin = new Image(1280, 720); // Using optional size for image
-
-    // Load an image of intrinsic size 300x227 in CSS pixels
-    image_lignes_origin.src = "auto_lignes.png";
-
+    image.src = "auto_lignes.png";
 
     function drawImageActualSize() {
     // Use the intrinsic size of image in CSS pixels for the canvas element
@@ -174,36 +82,19 @@ function dessine_reverse() {
     // To use the custom size we'll have to specify the scale parameters
     // using the element's width and height properties - lets draw one
     // on top in the corner:
-    ctx.drawImage(this, 0, hauteur_, this.width, this.height, 0, hauteur_, this.width, this.height);
-    ctx.drawImage(image_lignes_origin, 0, 0, this.width, hauteur_, 0, 0, this.width, hauteur_);
-
-
-
-
-
-
-
-
-
-
-
+    ctx.drawImage(this, 0, 0, this.width, hauteur_, 0, 0, this.width, hauteur_)
     }
 
     hauteur_--;
     if(hauteur_==0){
         tour_de_boucle++;
-        if(timing>1)timing--;
-        
+        timing = 1;
+        setTimeout(clignote,100);
         setTimeout(dessine,timing);
     }
     else{setTimeout(dessine_reverse,timing);}
 
 }
-
-
-
-
-
 
 function dessine() {
 
@@ -216,12 +107,6 @@ function dessine() {
     // Load an image of intrinsic size 300x227 in CSS pixels
     image.src = "auto_lignes.png";
 
-
-
-    const image_lignes_bis = new Image(1280, 720); // Using optional size for image
-    image_lignes_bis.src = "auto_lignes_bis.png";
-
-
     function drawImageActualSize() {
     // Use the intrinsic size of image in CSS pixels for the canvas element
     canvas.width = this.naturalWidth;
@@ -231,29 +116,16 @@ function dessine() {
     // To use the custom size we'll have to specify the scale parameters
     // using the element's width and height properties - lets draw one
     // on top in the corner:
-    if(tour_de_boucle>0){
-        ctx.drawImage(image_lignes_bis, 0, hauteur_, this.width, this.height, 0, hauteur_, this.width, this.height);
-    }
-
-    ctx.drawImage(this, 0, 0, this.width, hauteur_, 0, 0, this.width, hauteur_);
+    ctx.drawImage(this, 0, 0, this.width, hauteur_, 0, 0, this.width, hauteur_)
     }
 
     hauteur_++;
-    if(hauteur_>720){
-
-        if(tour_de_boucle>0)setTimeout(clignote_new,100);
-
-
-        hauteur_=720;setTimeout(dessine_reverse,timing);
-    
-    }
+    if(hauteur_>720){hauteur_=720;setTimeout(dessine_reverse,timing);}
     else{setTimeout(dessine,timing);}
 
 }
 
 dessine();
-
-
 
 
 var width = document.body.clientWidth;
@@ -264,8 +136,28 @@ const auto = document.getElementById("auto");
 auto.style.left=pos+"px";
 
 
-const auto_bis = document.getElementById("auto_bis");
-auto_bis.style.left=pos+"px";
+/*
+var increment = 0;
+
+function charge(){
+    
+    //context.drawImage(imageObject,XClipFromSource, YClipFromSource, widthToClipFromSource, heightToClipFromSource,canvasX, canvasY, canvasWidth, canvasHeight);
+    
+    document.getElementById("bl2").style.display = "block";
+
+    increment++;
+
+    setTimeout(charge,1000);
+}
+
+
+
+
+
+document.getElementById("bl1").style.display = "block";
+setTimeout(charge,1000);
+
+*/
 
 
 
