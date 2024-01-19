@@ -16,12 +16,8 @@
             background-color: #e3cdc0;
             overflow: hidden;
         }
-        #graphe
-        {
-          display: inline-block;
-        }
         p{
-            margin-top: 300px;
+            margin-top: 272px;
         }
         p span{
             color:black;
@@ -31,94 +27,16 @@
     </style>
     
 
-    <script type="text/javascript" src="vis.min.js"></script>
   </head>
   <body>
 
     <div style="margin-top: 72px;">
-        <a href="satori.html"><img width="72px;" src="8-cell-orig.gif" alt="tesseract"></a>
+        <a href="unity.html"><img width="72px;" src="8-cell-orig.gif" alt="tesseract"></a>
     </div>
     
-    <div><p><span>Élargis l’espace mental qui te sert de caisse de résonance<br>Il y a une ligne de fuite</span></p></div>
+    <div><p><span>Il y a une ligne de fuite<br>Élargis l’espace mental qui te sert de caisse de résonance</span></p></div>
 
-    <!--<div id="graphe"></div>-->
-
-    <script type="text/javascript">
-
-        
-let container = document.getElementById('graphe');
-
-    var height = 300;
-    var width = 300;
-
-console.log(height);
-
-    container.style.width = width+"px";
-container.style.height = height+"px";
-        
-        let nodes = new vis.DataSet([]);
-        let edges = new vis.DataSet([]);
-        
-        let data = {
-          nodes: nodes,
-          edges: edges
-        };
-        
-        let options = {
-            nodes : {
-                color: "black", // Nœud de couleur Bleue
-                font: {
-                color: "white",         // Couleur de l'écriture du label en rouge
-                size: 10                  // Police d'écriture du label de taille 20
-                }
-            }
-        }
-        
-        // Initialisation de l'instance de VisNetwork
-        let network = new vis.Network(container, data, options);
-        
-        // Ajout de nos deux noeuds
-        nodes.add(
-            [
-                {
-                    id: 1,
-                    label: "Inconscience",
-                },
-                {
-                    id: 2,
-                    label: "Le chemin de Traverse"
-                },
-                {
-                    id: 3,
-                    label: "Porte de cellier"
-                },
-            ]
-        );
-        
-        // Ajout du lien entre nos deux noeuds
-        edges.add(
-            [
-                {
-                    from: 1,
-                    to: 2,
-                    label: "",
-                    arrows: "to"
-                },
-                {
-                    from: 2,
-                    to: 3,
-                    label: "",
-                    arrows: "to"
-                },
-                {
-                    from: 3,
-                    to: 1,
-                    label: "",
-                    arrows: "to"
-                },
-            ]
-        );
-    </script>
+  
 
   </body>
 </html>
