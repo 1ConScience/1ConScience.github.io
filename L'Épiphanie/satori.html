@@ -3,122 +3,44 @@
 <html>
   <head>
     <link rel="shortcut icon" href="https://64.media.tumblr.com/edce45fa1bf98132f17f243ac9f7733e/0168a80ceb7d68b5-23/s128x128u_c1/cbfe00c8f9ed5f409ef92ee34517e98bf289c6df.pnj">
-    <title>1 - 1conscience - unity</title>
+    <title>Épectase</title>
     
     <style>
         body{
             margin:auto;
             text-align: center;
-            background-image: url(1.jpg);
-            background-repeat: no-repeat;
-            background-position-y: center;
-            background-position-x: center;
+            background-image: url(crux.PNG);
             background-color: black;
-            overflow: hidden;
         }
-        #graphe
-        {
-          display: inline-block;
-        }
-        p{
-            margin-top: 300px;
-        }
-        p span{
-            color:black;
-            background-color: #eae3c6;
-            font-size: 1.2em;
+        pre{
+            color:white;
+            background-color: black;
         }
     </style>
     
 
-    <script type="text/javascript" src="vis.min.js"></script>
   </head>
   <body>
 
-    <div style="margin-top: 72px;">
-        <a href="satori.html"><img width="72px;" src="8-cell-orig.gif" alt="tesseract"></a>
+
+    <div>
+
+<pre>
+    L’extase est une sortie de soi et une fusion dans autre chose de plus vaste : une révélation divine, ou parfois charnelle, l’accès à un autre monde que l’habituel, dans un autre état de conscience que l’habituel…
+
+L’enstase est une chute en soi-même, et on y découvre que tout est là. C’est la douceur qui monte du dedans, le calme à qui l’on a permis d’émerger de l’intérieur.
+
+Tout à coup, éruption volcanique de sérénité. C’est toujours bouleversant de sentir cet apaisement auto-produit. Bouleversant de constater comment le calme enstatique nous relie au monde au lieu de nous en séparer.
+
+On se laisse alors transformer, au lieu de vouloir encore et toujours transformer ce qui nous entoure. Cela se passe lors de moments de grâce, qui surviennent souvent lorsqu’on ne s’y attend pas.
+
+Moments de grâce qui ne peuvent jaillir que d’une pleine conscience et d’une vraie présence au réel.
+
+Christophe ANDRÉ
+</pre>
+
     </div>
-    
-    <div><p><span>Élargis l’espace mental qui te sert de caisse de résonance<br>Il y a une ligne de fuite</span></p></div>
 
-    <!--<div id="graphe"></div>-->
-
-    <script type="text/javascript">
-
-        
-let container = document.getElementById('graphe');
-
-    var height = 300;
-    var width = 300;
-
-console.log(height);
-
-    container.style.width = width+"px";
-container.style.height = height+"px";
-        
-        let nodes = new vis.DataSet([]);
-        let edges = new vis.DataSet([]);
-        
-        let data = {
-          nodes: nodes,
-          edges: edges
-        };
-        
-        let options = {
-            nodes : {
-                color: "black", // Nœud de couleur Bleue
-                font: {
-                color: "white",         // Couleur de l'écriture du label en rouge
-                size: 10                  // Police d'écriture du label de taille 20
-                }
-            }
-        }
-        
-        // Initialisation de l'instance de VisNetwork
-        let network = new vis.Network(container, data, options);
-        
-        // Ajout de nos deux noeuds
-        nodes.add(
-            [
-                {
-                    id: 1,
-                    label: "Inconscience",
-                },
-                {
-                    id: 2,
-                    label: "Le chemin de Traverse"
-                },
-                {
-                    id: 3,
-                    label: "Porte de cellier"
-                },
-            ]
-        );
-        
-        // Ajout du lien entre nos deux noeuds
-        edges.add(
-            [
-                {
-                    from: 1,
-                    to: 2,
-                    label: "",
-                    arrows: "to"
-                },
-                {
-                    from: 2,
-                    to: 3,
-                    label: "",
-                    arrows: "to"
-                },
-                {
-                    from: 3,
-                    to: 1,
-                    label: "",
-                    arrows: "to"
-                },
-            ]
-        );
-    </script>
 
   </body>
 </html>
