@@ -10,7 +10,7 @@
           padding: 0;
           margin: 0;
             background-image: url(satori.PNG);
-            background-color: black;
+            background-color: #020611;
             background-repeat: repeat-y;
             background-position-x: center;
             text-align: left;
@@ -70,7 +70,7 @@ Moments de grâce qui ne peuvent jaillir que d’une pleine conscience et d’un
 
 </div>
 
-<div style="background-color: black;position: absolute;bottom: 74px;width: 90%;height: 220px;text-align: center;right:0;padding: 0;margin: 0;border-color: #e76820;border: 3px;border-style:dotted;">
+<div id="rectangle_magique" style="background-color: #020611;position: absolute;bottom: 74px;width: 90%;height: 220px;text-align: center;right:0;padding: 0;margin: 0;border-color: #e76820;border: 3px;border-style:dotted;">
 
   <img style="padding: 0;margin: 0;margin-top: 35px;margin-left:-10%" src="../6EQUJ5/icon/test.png" alt="inc-on-science logo" width="150px;">
 
@@ -81,10 +81,17 @@ Moments de grâce qui ne peuvent jaillir que d’une pleine conscience et d’un
 
 const elem = document.getElementById("carre_magique");
 
+const elem2 = document.getElementById("rectangle_magique");
+
 function new_color() {
 
   let newColor = "hsla("+Math.floor(Math.random() * 360)+", 100%, 50%, 1)";
   elem.style.color = newColor;
+
+
+
+  elem2.style.backgroundColor = newColor;
+
 
   setTimeout(new_color, 100);
 }
