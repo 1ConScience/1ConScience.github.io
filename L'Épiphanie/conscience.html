@@ -14,7 +14,7 @@
             background-repeat: repeat-y;
             background-position-x: center;
             text-align: left;
-            color:cyan;
+            color:#e76820;
         }
         pre em{
             
@@ -54,7 +54,7 @@ Moments de grâce qui ne peuvent jaillir que d’une pleine conscience et d’un
     </div>
     
     <br>  <br>  <br><br>
-    <pre>e que je cherche <span style="font-family:monospace;color:rgb(225, 0, 255);background-color: black;">existe</span><br>'appartient pas <span style="font-family:monospace;color:rgb(225, 0, 255);background-color: black;">vraiment</span> au monde physique<br>st contenue dans <span style="font-family:monospace;color:rgb(225, 0, 255);background-color: black;">une succes</span>sion de choses sensibles</pre>
+    <pre id="carre_magique">e que je cherche <span style="font-family:monospace;color:rgb(225, 0, 255);background-color: black;">existe</span><br>'appartient pas <span style="font-family:monospace;color:rgb(225, 0, 255);background-color: black;">vraiment</span> au monde physique<br>st contenue dans <span style="font-family:monospace;color:rgb(225, 0, 255);background-color: black;">une succes</span>sion de choses sensibles</pre>
 
     <br>  <br>
 
@@ -64,19 +64,34 @@ Moments de grâce qui ne peuvent jaillir que d’une pleine conscience et d’un
 
 
 
-<div style="position: absolute;bottom: 0;width: 100%;          padding: 0;
-margin: 0;">
+<div style="position: absolute;bottom: 0;width: 100%;padding: 0;margin: 0;">
 
-<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1643194263&color=%23ff0000&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/animusinvidious" title="Animus Invidious" target="_blank" style="color: #cccccc; text-decoration: none;">Animus Invidious</a> · <a href="https://soundcloud.com/animusinvidious/undaunted-corm-cut" title="Undaunted [Corm Cut]" target="_blank" style="color: #cccccc; text-decoration: none;">Undaunted [Corm Cut]</a></div>
-<!--
-<div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/animusinvidious" title="Animus Invidious" target="_blank" style="color: #cccccc; text-decoration: none;">Animus Invidious</a> · <a href="https://soundcloud.com/animusinvidious/undaunted-corm-cut" title="Undaunted [Corm Cut]" target="_blank" style="color: #cccccc; text-decoration: none;">Undaunted [Corm Cut]</a></div>
-</div>-->
-
-<div style="background-color: black;position: absolute;bottom: 96px;width: 88%;height: 220px;text-align: center;left:6%;vertical-align:middle;padding-top: 0;">
-
-  <img style="margin-top: 25px;" src="../6EQUJ5/icon/test.png" alt="inc-on-science logo" width="150px;">
+<iframe style="position: absolute;bottom: 0;width: 100%;padding: 0;margin: 0;" width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1643194263&color=%23ff0000&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
 
 </div>
+
+<div style="background-color: black;position: absolute;bottom: 74px;width: 90%;height: 220px;text-align: center;right:0;padding: 0;margin: 0;border-color: #e76820;border: 3px;border-style:dotted;">
+
+  <img style="padding: 0;margin: 0;margin-top: 35px;margin-left:-10%" src="../6EQUJ5/icon/test.png" alt="inc-on-science logo" width="150px;">
+
+</div>
+
+
+<script>
+
+const elem = document.getElementById("carre_magique");
+
+function new_color() {
+
+  let newColor = "hsla("+Math.floor(Math.random() * 360)+", 100%, 50%, 1)";
+  elem.style.color = newColor;
+
+  setTimeout(new_color, 100);
+}
+
+new_color();
+
+</script>
 
   </body>
 </html>
