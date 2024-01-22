@@ -142,11 +142,22 @@
 
             duree=Math.floor(Math.random() * 1000);
 
-            var testR = Math.floor(Math.random() * 255);
+
+
+
+            let newColor = "hsla("+Math.floor(Math.random() * 360)+", 100%, 50%, 1)";
+
+            /*var testR = Math.floor(Math.random() * 255);
             var testG = Math.floor(Math.random() * 255);
             var testB = Math.floor(Math.random() * 255);
 
-            document.body.style.color = "rgb("+testR+","+testG+","+testB+")";
+            document.body.style.color = "rgb("+testR+","+testG+","+testB+")";*/
+
+            document.body.style.color = newColor;
+
+
+
+
 
             var taille = Math.floor(Math.random() * 10)
             document.body.style.fontSize = taille+"em";
