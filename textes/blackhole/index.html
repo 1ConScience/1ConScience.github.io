@@ -52,29 +52,40 @@
    <script>
 
 
-let cpt = 1;
+
 
 function tourne_et_retourne(){
 
-    if(cpt==27)cpt=1;
+
 
 
     let cpt_bis = Math.floor(Math.random() * 27);
 
+    if(cpt_bis==0)cpt_bis=27;
+
     document.body.style.backgroundImage = "url('0_"+cpt_bis+"p.png')";
     document.body.style.backgroundSize="50% 50%";
 
-    cpt++;
+    
 
 
-    let timing = Math.floor(Math.random() * 277);
-    timing = timing + 50;
+    let timing = Math.floor(Math.random() * 377);
+    timing = timing + 33;
+
+
+
+
 
     setTimeout(tourne_et_retourne,timing);
 }
 
 tourne_et_retourne();
 
+
+
+document.onclick = function(){
+    alert(Math.floor(Math.random() * 27)+" "+Math.floor(Math.random() * 27)+" "+Math.floor(Math.random() * 27));
+};
 
 
     </script>
