@@ -45,13 +45,11 @@
    
    
    
-   
-   
-   
+   <div><p id="para" style="color:red"></p></div>
    
    <script>
 
-
+const para = document.getElementById("para");
 
 
 function tourne_et_retourne(){
@@ -84,7 +82,7 @@ tourne_et_retourne();
 
 
 document.onclick = function(){
-    alert(Math.floor(Math.random() * 27)+" "+Math.floor(Math.random() * 27)+" "+Math.floor(Math.random() * 27));
+    para.innerHTML=Math.floor(Math.random() * 277)+" "+Math.floor(Math.random() * 277)+" "+Math.floor(Math.random() * 277)+" "+Math.floor(Math.random() * 277);
 };
 
 
