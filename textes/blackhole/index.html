@@ -58,7 +58,10 @@ function tourne_et_retourne(){
 
     if(cpt==27)cpt=1;
 
-    document.body.style.backgroundImage = "url('0_"+cpt+"p.png')";
+
+    let cpt_bis = Math.floor(Math.random() * 27);
+
+    document.body.style.backgroundImage = "url('0_"+cpt_bis+"p.png')";
     document.body.style.backgroundSize="50% 50%";
 
     cpt++;
