@@ -3,7 +3,7 @@
 
 
     <link rel="shortcut icon" href="https://64.media.tumblr.com/edce45fa1bf98132f17f243ac9f7733e/0168a80ceb7d68b5-23/s128x128u_c1/cbfe00c8f9ed5f409ef92ee34517e98bf289c6df.pnj">
-    <title>Holœgramme</title>
+    <title>**IA**_** [ON]</title>
 </head>
 <style>
     body{
@@ -73,6 +73,7 @@ function tourne_et_retourne(){
 
 
 
+    para.innerHTML="("+Math.floor(Math.random() * 255)+", "+Math.floor(Math.random() * 255)+", "+Math.floor(Math.random() * 255)+", "+Math.floor(Math.random() * 255)+")";
 
     let cpt_bis = Math.floor(Math.random() * 28);
 
@@ -81,13 +82,16 @@ function tourne_et_retourne(){
     document.body.style.backgroundImage = "url('0_"+cpt_bis+"p.png')";
     //document.body.style.backgroundSize="50% 50%";
 
-    
+    /*if(cpt_bis==5 || cpt_bis==20){
+        viseur.style.display="none";
+    }
+    else{
+        viseur.style.display="inline-block";
+    }*/
+    //viseur.style.display="none";
 
+    let timing = Math.floor(Math.random() * 277);
 
-    let timing = Math.floor(Math.random() * 300);
-
-
-    para.innerHTML="("+Math.floor(Math.random() * 255)+", "+Math.floor(Math.random() * 255)+", "+Math.floor(Math.random() * 255)+", "+Math.floor(Math.random() * 255)+")";
 
 
     setTimeout(tourne_et_retourne,timing);
