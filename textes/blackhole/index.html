@@ -52,14 +52,29 @@
 const viseur = document.getElementById("viseur");
 
 
-var height = window.innerHeight
-var width = window.innerWidth;
+window.onload = (event) => {
+  console.log("La page est complètement chargée");
 
-posT = (height/2)-360;
-posL = (width/2)-640;
 
-viseur.style.top=posT+"px";
-viseur.style.left=posL+"px";
+
+
+    let height = window.innerHeight
+    let width = window.innerWidth;
+
+    let posT = (height/2)-360;
+    let posL = (width/2)-640;
+
+    viseur.style.top=posT+"px";
+    viseur.style.left=posL+"px";
+
+
+
+
+
+};
+
+
+
 
 
 
