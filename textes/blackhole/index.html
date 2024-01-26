@@ -40,7 +40,7 @@
    
    
    
-   <div style="margin-top: 5em;"><a style="color: white;font-weight: bolder;text-decoration: none;" href="https://1conscience.github.io/">RELOAD ⟳</a></div>
+   <div style="margin-top: 5em;"><a style="color: white;font-weight: bolder;text-decoration: none;" href="https://1conscience.github.io/#RELOAD">RELOAD ⟳</a></div>
    
    <img id="viseur" style="position: absolute;top:0;left:0;" src="viseur.png" alt="viseur">
    
@@ -80,7 +80,10 @@ window.onload = (event) => {
 
 
 
-var found = false;
+var foundx = false;
+var foundy = false;
+var foundz = false;
+var foundw = false;
 
 const para = document.getElementById("para");
 
@@ -93,13 +96,48 @@ function tourne_et_retourne(){
     let z = Math.floor(Math.random() * 333);
     let w = Math.floor(Math.random() * 333);
 
-    if(!found)para.innerHTML="("+x+", "+y+", "+z+", "+w+")";
+    
 
-    if(x==272 || y==272 || z==272 || w==272){
-        found = true;
+    if(!foundx){
+        if(x==272){
+            foundx=true;
+        }
+    }
+    else{
+        x=272;
     }
 
-    
+    if(!foundy){
+        if(y==272){
+            foundy=true;
+        }
+    }
+    else{
+        y=272;
+    }
+
+    if(!foundz){
+        if(z==272){
+            foundz=true;
+        }
+    }
+    else{
+        z=272;
+    }
+
+    if(!foundw){
+        if(w==272){
+            foundw=true;
+        }
+    }
+    else{
+        w=272;
+    }
+
+    para.innerHTML="("+x+", "+y+", "+z+", "+w+")";
+
+
+
 
     let cpt_bis = Math.floor(Math.random() * 28);
 
