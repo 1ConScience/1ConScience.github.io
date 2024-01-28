@@ -113,7 +113,12 @@ span[class^="dot-"]{
     </div>
 
 
-
+    <div id="exe_bis" style="display: none;">
+      <a href="verite_fractal.html#mũse">
+          <img width="50px" src="exe_icon.jpg" alt="exe_icon">
+          <br>g_tout_su.exe
+      </a>
+  </div>
 
 
 
@@ -259,9 +264,14 @@ if(last_3_char=="load"){
   console.log(last_3_char+"3");
 
 
-  document.body.style.backgroundColor="#040218";
+  document.body.style.backgroundColor="#02020c";
   document.getElementById("canne").setAttribute("style","display:none");
   document.getElementById("profil").setAttribute("style","display:inline-block");
+
+
+  
+  document.getElementById("exe").setAttribute("style","display:none");
+  document.getElementById("exe_bis").setAttribute("style","display:block");
   
 
   document.body.innerHTML += `
