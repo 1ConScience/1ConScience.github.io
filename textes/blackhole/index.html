@@ -50,7 +50,7 @@
 
 
 
-   <div><p id="gg" style="color:cyan;display:none;"><a href="https://youtu.be/iuh9XBw4FEs?si=n0ymgSRQWm7JM4lm" style="color:cyan;">GG</a></p></div>
+  <p id="gg" style="color:red;display:none;position: absolute;top:0;left:0;margin:0;padding:0;"><a href="https://youtu.be/iuh9XBw4FEs?si=n0ymgSRQWm7JM4lm" style="color:red;text-decoration: none;">ʚʃɞ⁰</a></p>
 
    
 
@@ -59,7 +59,7 @@
    
    <script>
 
-
+const gg = document.getElementById("gg");
 
 
 
@@ -92,7 +92,8 @@ window.onload = (event) => {
     viseur.style.left=posL+"px";
 
 
-
+    gg.style.top=((height/2)-12)+"px";
+    gg.style.left=((width/2)-9)+"px";
 
 
 };
@@ -102,7 +103,7 @@ window.onload = (event) => {
 
 
 
-
+var fin = false;
 
 var foundx = false;
 var foundy = false;
@@ -111,7 +112,7 @@ var foundw = false;
 
 const para = document.getElementById("para");
 
-const gg = document.getElementById("gg");
+
 
 
 function tourne_et_retourne(){
@@ -170,6 +171,7 @@ function tourne_et_retourne(){
 
     if(foundx && foundy && foundz && foundw && trust){
         gg.style.display="block";
+        fin = true;
     }
 
 
@@ -190,9 +192,14 @@ function tourne_et_retourne(){
 
     let timing = Math.floor(Math.random() * 277);
 
+    if(fin){
+        document.body.style.backgroundImage = "url('0_29p.png')";
+    }
+    else{
+        setTimeout(tourne_et_retourne,timing);
+    }
 
-
-    setTimeout(tourne_et_retourne,timing);
+    
 }
 
 tourne_et_retourne();
