@@ -92,7 +92,7 @@ drug = ok;
 
 rage = null;
 
-reverse ;
+reverse ; // il faut une fonction détrompeur.
 
 jsuis Meta Agnostique. ;)
 
