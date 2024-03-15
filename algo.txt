@@ -46,3 +46,18 @@ function erreur(){}
 algo des algo
 ou lalgo du mental
 lalgo du trou noir 
+
+maitriser le temps
+
+protocol(){
+
+}
+
+clean(){
+
+
+}
+
+social_engenering(){
+    
+}
