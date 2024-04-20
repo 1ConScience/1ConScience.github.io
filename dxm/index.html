@@ -1,0 +1,151 @@
+
+<!DOCTYPE html> 
+<html lang="fr"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" 
+          content="IE=edge"> 
+    <meta name="viewport" 
+          content="width=device-width, initial-scale=1.0"> 
+    <title>Geeks for Geeks</title> 
+    <link rel="stylesheet" href="style.css"> 
+</head> 
+<style> 
+    #image-container { 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        height: 100vh; 
+    } 
+  
+    img { 
+        max-width: 100%; 
+    } 
+  
+    #image-container img:hover { 
+        cursor: zoom-in; 
+    }
+
+    body{
+        background-color: #000000;
+        overflow: hidden; /* Hide scrollbars */
+    }
+
+</style> 
+  
+<body> 
+    <div id="image-container"> 
+        <img src="interessant_qhd.png"
+             alt="Toutgether" id="cursorImage" ondragstart="return false;"> 
+    </div> 
+</body> 
+<script>
+
+
+let currentZoom = 1; 
+let minZoom = 1; 
+let maxZoom = 5; 
+let stepSize = 0.05;
+
+
+let container = document.getElementById('image-container'); 
+
+container.addEventListener('wheel', function (event) { 
+	// Zoom in or out based on the scroll direction 
+	let direction = event.deltaY > 0 ? -1 : 1; 
+	zoomImage(direction); 
+});
+
+
+function zoomImage(direction) { 
+	let newZoom = currentZoom + direction * stepSize; 
+
+	// Limit the zoom level to the minimum and maximum values 
+	if (newZoom < minZoom || newZoom > maxZoom) { 
+		return; 
+	} 
+
+	currentZoom = newZoom; 
+
+	// Update the CSS transform of the image to scale it 
+	let image = document.querySelector('#image-container img'); 
+	image.style.transform = 'scale(' + currentZoom + ')'; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let gMouseDownX = 0;
+let gMouseDownY = 0;
+let gMouseDownOffsetX = 0;
+let gMouseDownOffsetY = 0;
+
+function addListeners() {
+    document.getElementById('cursorImage').addEventListener('mousedown', mouseDown, false);
+    window.addEventListener('mouseup', mouseUp, false);
+}
+
+function mouseUp() {
+    window.removeEventListener('mousemove', divMove, true);
+}
+
+function mouseDown(e) {
+    gMouseDownX = e.clientX;
+    gMouseDownY = e.clientY;
+
+    var div = document.getElementById('cursorImage');
+
+    //The following block gets the X offset (the difference between where it starts and where it was clicked)
+    let leftPart = "";
+    if(!div.style.left)
+        leftPart+="0px";    //In case this was not defined as 0px explicitly.
+    else
+        leftPart = div.style.left;
+    let leftPos = leftPart.indexOf("px");
+    let leftNumString = leftPart.slice(0, leftPos); // Get the X value of the object.
+    gMouseDownOffsetX = gMouseDownX - parseInt(leftNumString,10);
+
+    //The following block gets the Y offset (the difference between where it starts and where it was clicked)
+    let topPart = "";
+    if(!div.style.top)
+        topPart+="0px";     //In case this was not defined as 0px explicitly.
+    else
+        topPart = div.style.top;
+    let topPos = topPart.indexOf("px");
+    let topNumString = topPart.slice(0, topPos);    // Get the Y value of the object.
+    gMouseDownOffsetY = gMouseDownY - parseInt(topNumString,10);
+
+    window.addEventListener('mousemove', divMove, true);
+}
+
+function divMove(e){
+    var div = document.getElementById('cursorImage');
+    div.style.position = 'absolute';
+    let topAmount = e.clientY - gMouseDownOffsetY;
+    div.style.top = topAmount + 'px';
+    let leftAmount = e.clientX - gMouseDownOffsetX;
+    div.style.left = leftAmount + 'px';
+}
+
+addListeners();
+
+
+
+
+
+
+</script> 
+  
+</html>
