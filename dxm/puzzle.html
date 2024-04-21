@@ -21,6 +21,53 @@
 
 
 
+
+
+    #un{
+        position: absolute;
+        top:200px;
+        left:830px;
+        width:120px;
+        height:120px;
+    }
+    #deux{
+        position: absolute;
+        top:460px;
+        left:770px;
+        width:280px;
+        height:280px;
+    }
+    #trois{
+        position: absolute;
+        top:340px;
+        left:780px;
+        width:120px;
+        height:50px;
+    }
+    #quatre{
+        position: absolute;
+        top:330px;
+        left:950px;
+        width:100px;
+        height:140px;
+    }
+    #cinq{
+        position: absolute;
+        top:500px;
+        left:1120px;
+        width:120px;
+        height:280px;
+    }
+    #six{
+        position: absolute;
+        top:550px;
+        left:600px;
+        width:120px;
+        height:280px;
+    }
+
+
+
 </style> 
   
 <body> 
@@ -30,11 +77,175 @@
 
 
 
-
+             <a href="https://docs.google.com/document/d/12GuXMMMh_EPD8BxmRByHPeBNTHp9QosAlisudjC_AUQ/edit?usp=sharing">
+              <div id="un"></div>
+          </a>
+          <a href="https://docs.google.com/document/d/1MPsOCzlcFg4mnDU5MtWZdRLIUYOb8LKqw2vMsBy-tA4/edit?usp=sharing">
+            <div id="deux"></div>
+        </a>
+        <a href="https://isomorphee.tumblr.com/">
+          <div id="trois"></div>
+      </a>
+      <a href="https://docs.google.com/document/d/1ONzGpkOzEWfLy1pROiJg5AMw-bYYdV7xxSNSSQSKnEI/">
+        <div id="quatre"></div>
+    </a>
+    <a href="https://docs.google.com/document/d/1Tz4e9PCP85OyxK0vxvJj2t7YQ6EEg1zWzLpGJzSR0_A/edit?usp=sharing">
+      <div id="cinq"></div>
+  </a>
+  <a href="https://docs.google.com/document/d/1ptqCubtMW1s3vC5zYg39kf6DJrzRpwBtMW9yiZv1WdE/edit?usp=sharing">
+    <div id="six"></div>
+</a>
 
            
         
 <script>
+
+const un = document.getElementById("un");
+
+// This handler will be executed only once when the cursor
+// moves over the unordered list
+un.addEventListener(
+  "mouseover",
+  (event) => {
+    document.getElementById("puzzle").src="puzzle_1_hover.png";
+  },
+  false,
+);
+
+un.addEventListener(
+  "mouseout",
+  (event) => {
+    document.getElementById("puzzle").src="puzzle.png";
+  },
+  false,
+);
+
+
+
+
+
+
+
+const deux = document.getElementById("deux");
+
+// This handler will be executed only once when the cursor
+// moves over the unordered list
+deux.addEventListener(
+  "mouseover",
+  (event) => {
+    document.getElementById("puzzle").src="puzzle_2_hover.png";
+  },
+  false,
+);
+
+deux.addEventListener(
+  "mouseout",
+  (event) => {
+    document.getElementById("puzzle").src="puzzle.png";
+  },
+  false,
+);
+
+
+
+
+
+const trois = document.getElementById("trois");
+
+// This handler will be executed only once when the cursor
+// moves over the unordered list
+trois.addEventListener(
+  "mouseover",
+  (event) => {
+    document.getElementById("puzzle").src="puzzle_3_hover.png";
+  },
+  false,
+);
+
+trois.addEventListener(
+  "mouseout",
+  (event) => {
+    document.getElementById("puzzle").src="puzzle.png";
+  },
+  false,
+);
+
+
+
+
+
+
+
+const quatre = document.getElementById("quatre");
+
+// This handler will be executed only once when the cursor
+// moves over the unordered list
+quatre.addEventListener(
+  "mouseover",
+  (event) => {
+    document.getElementById("puzzle").src="puzzle_4_hover.png";
+  },
+  false,
+);
+
+quatre.addEventListener(
+  "mouseout",
+  (event) => {
+    document.getElementById("puzzle").src="puzzle.png";
+  },
+  false,
+);
+
+
+
+
+const cinq = document.getElementById("cinq");
+
+// This handler will be executed only once when the cursor
+// moves over the unordered list
+cinq.addEventListener(
+  "mouseover",
+  (event) => {
+    document.getElementById("puzzle").src="puzzle_5_hover.png";
+  },
+  false,
+);
+
+cinq.addEventListener(
+  "mouseout",
+  (event) => {
+    document.getElementById("puzzle").src="puzzle.png";
+  },
+  false,
+);
+
+
+
+
+
+
+
+
+
+const six = document.getElementById("six");
+
+// This handler will be executed only once when the cursor
+// moves over the unordered list
+six.addEventListener(
+  "mouseover",
+  (event) => {
+    document.getElementById("puzzle").src="puzzle_6_hover.png";
+  },
+  false,
+);
+
+six.addEventListener(
+  "mouseout",
+  (event) => {
+    document.getElementById("puzzle").src="puzzle.png";
+  },
+  false,
+);
 
 
 
