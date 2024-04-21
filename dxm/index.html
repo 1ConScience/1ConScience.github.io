@@ -65,19 +65,19 @@
 
 
 
-            <a href="https://1conscience.github.io/textes/blackhole/">
+            <a href="../textes/blackhole/index.html">
                 <div id="red_zone"></div>
             </a>
 
-            <a href="https://1conscience.github.io/6EQUJ5/Autost%C3%A9r%C3%A9ogramme.html">
+            <a href="../6EQUJ5/Autost%C3%A9r%C3%A9ogramme.html">
                 <div id="idea_zone"></div>
             </a>
 
-            <a href="https://1conscience.github.io/textes/localhost.html">
+            <a href="../textes/localhost.html">
                 <div id="connexion_zone"></div>
             </a>
 
-            <a href=" https://1conscience.github.io/dxm/puzzle.html">
+            <a href="puzzle.html">
                 <div id="puzzle_zone"></div>
             </a>
            
@@ -93,14 +93,14 @@ red_zone.addEventListener(
   "mouseover",
   (event) => {
     document.getElementById("defragmentation").src="red_hover.png";
+  },
+  false,
+);
 
-
-    // reset the color after a short delay
-    setTimeout(() => {
-        document.getElementById("defragmentation").src="defragmentation.png";
-    }, 1000);
-
-
+red_zone.addEventListener(
+  "mouseout",
+  (event) => {
+    document.getElementById("defragmentation").src="defragmentation.png";
   },
   false,
 );
@@ -118,14 +118,14 @@ idea_zone.addEventListener(
   "mouseover",
   (event) => {
     document.getElementById("defragmentation").src="ampoule_hover.png";
+  },
+  false,
+);
 
-
-    // reset the color after a short delay
-    setTimeout(() => {
-        document.getElementById("defragmentation").src="defragmentation.png";
-    }, 1000);
-
-
+idea_zone.addEventListener(
+  "mouseout",
+  (event) => {
+    document.getElementById("defragmentation").src="defragmentation.png";
   },
   false,
 );
@@ -143,19 +143,17 @@ connexion_zone.addEventListener(
   "mouseover",
   (event) => {
     document.getElementById("defragmentation").src="connexion_hover.png";
-
-
-    // reset the color after a short delay
-    setTimeout(() => {
-        document.getElementById("defragmentation").src="defragmentation.png";
-    }, 1000);
-
-
   },
   false,
 );
 
-
+connexion_zone.addEventListener(
+  "mouseout",
+  (event) => {
+    document.getElementById("defragmentation").src="defragmentation.png";
+  },
+  false,
+);
 
 
 
@@ -168,18 +166,17 @@ puzzle_zone.addEventListener(
   "mouseover",
   (event) => {
     document.getElementById("defragmentation").src="puzzle_hover.png";
-
-
-    // reset the color after a short delay
-    setTimeout(() => {
-        document.getElementById("defragmentation").src="defragmentation.png";
-    }, 1000);
-
-
   },
   false,
 );
 
+puzzle_zone.addEventListener(
+  "mouseout",
+  (event) => {
+    document.getElementById("defragmentation").src="defragmentation.png";
+  },
+  false,
+);
 
 
 </script>
