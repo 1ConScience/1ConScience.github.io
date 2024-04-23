@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://64.media.tumblr.com/edce45fa1bf98132f17f243ac9f7733e/0168a80ceb7d68b5-23/s128x128u_c1/cbfe00c8f9ed5f409ef92ee34517e98bf289c6df.pnj">
+    <title>EXP - Follow the Blue Butterfly ʚʃɞ...</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: monospace, 'Courier New', Courier;
+            font-size: 1em;
+        }
+        #exe{
+            padding-top:10%;
+        }
+        #exe_bis{
+            padding-top:10%;
+        }
+        canvas{
+            background-color:black;
+        }
+
+
+
+
+.wrapper{
+  margin-top: 1em;
+}
+
+
+
+
+
+
+
+
+
+        h1.loading{
+  font-size: 3em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+span[class^="dot-"]{
+  opacity: 0;
+}
+.dot-one{
+  animation: dot-one 2s infinite linear
+}
+.dot-two{
+  animation: dot-two 2s infinite linear
+}
+.dot-three{
+  animation: dot-three 2s infinite linear
+}
+@keyframes dot-one{
+  0%{
+    opacity: 0;
+  }
+  15%{
+    opacity: 0;
+  }
+  25%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes dot-two{
+  0%{
+    opacity: 0;
+  }
+  25%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes dot-three{
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0;
+  }
+  75%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+
+
+
+
+    </style>
+    <script src="https://unpkg.com/roughjs@latest/bundled/rough.js"></script>
+</head>
+<body>
+    <div id="exe">
+        <a href="https://lechemindetraverse.tumblr.com/">
+            <img width="50px" src="exe_icon.jpg" alt="exe_icon">
+            <br>g_tout_su?.exe
+        </a>
+    </div>
+
+
+    <div id="exe_bis" style="display: none;">
+      <a href="verite_fractal.html#mũse">
+          <img width="50px" src="exe_icon.jpg" alt="exe_icon">
+          <br>g_tout_su.exe
+      </a>
+  </div>
+
+
+
+<a href="#"><canvas id="canne" width="204" height="120"></canvas></a>
+    
+<img id="profil" width="377px" src="textes/lol.jpg" alt="profil hypnotique" style="display:none;">
+
+
+    <div class="wrapper">
+        <div class="loading-text"> <!--Loading-text-->
+          <h1 id="fin_interminable">ENDING
+            <span class="dot-one"> .</span>
+            <span class="dot-two"> .</span>
+            <span class="dot-three"> .</span>
+          </h1>
+        </div> <!--/Loading-text-->
+      </div> <!-- /Wrapper -->
+
+
+
+
+    <script src="https://unpkg.com/roughjs@4.6.6/bundled/rough.js" crossorigin="anonymous"></script>
+
+
+
+    <script type="module">
+
+      const canvas = document.querySelector('canvas');
+      const rc = rough.canvas(canvas, {
+        options: {
+          disableMultiStroke: true
+        }
+      });
+  
+      rc.line(10, 10, 100, 10);
+      rc.line(10, 210, 500, 210);
+      rc.line(10, 20, 10, 110, { stroke: 'red' });
+      rc.line(50, 30, 200, 100, { stroke: 'blue', strokeWidth: 5 });
+
+      canvas.addEventListener("click", (event) => {
+        //alert('♯ Ping Ping Ping Pong');
+        debut = false;
+        setTimeout(Tout_effacer, 333); 
+      });
+
+
+    function Tout_effacer() { 
+        document.body.innerHTML = ""; 
+      echo_test();
+    }
+
+    
+    
+    const str = "CŒUR, CŒUR, TU M'ENTƐNDS ?";
+
+    const lignes = str.split('');//si jmets un espace ca separe par espace donc mot par mot, sans espace lettre par lettre
+    var adr=-1;
+
+    var contenu="";
+
+    function echo_test() { 
+
+        affiche();
+
+    }
+
+    function affiche() { 
+
+        adr++;
+        console.log(adr);
+        if (adr<lignes.length){
+            
+            contenu+=lignes[adr];
+            document.body.innerHTML=contenu+"|";
+            setTimeout(affiche, 144); 
+
+        } 
+        else{
+            document.body.addEventListener("keydown", dessiner_coeur);
+
+        }
+
+    }
+
+    function dessiner_coeur() { 
+
+        document.body.style.color = "red";
+        document.body.innerHTML="Extraire plus d'informations <a href='verite_carre.html'>└→</a>";
+
+    }
+
+        
+
+
+    var debut = true;
+    
+    function matrix_reload() { 
+
+        rc.rectangle(0, 0, 300,300, {
+        fill: 'black',
+        fillStyle: 'solid' // solid fill
+        });
+
+
+        rc.line(10, 10, 100, 10);
+        rc.line(10, 210, 500, 210);
+        rc.line(10, 20, 10, 110, { stroke: 'red' });
+        rc.line(50, 30, 200, 100, { stroke: 'blue', strokeWidth: 5 });
+
+        if(debut)setTimeout(matrix_reload, 125);
+    }
+    setTimeout(matrix_reload, 125);
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    var urlcourante = document.location.href; 
+
+    var last_3_char = urlcourante.substr(urlcourante.length-4, urlcourante.length-1);
+
+    console.log(last_3_char);
+if(last_3_char == "#red" ){
+  document.getElementById("fin_interminable").setAttribute("style","color:red");
+}
+if(last_3_char=="blue"){
+  document.getElementById("fin_interminable").setAttribute("style","color:blue");
+}
+
+
+console.log(last_3_char+"2");
+if(last_3_char=="load"){
+  document.getElementById("fin_interminable").setAttribute("style","color:#720e9e");
+  console.log(last_3_char+"3");
+
+
+  document.body.style.backgroundColor="#02020c";
+  document.getElementById("canne").setAttribute("style","display:none");
+  document.getElementById("profil").setAttribute("style","display:inline-block");
+
+
+  
+  document.getElementById("exe").setAttribute("style","display:none");
+  document.getElementById("exe_bis").setAttribute("style","display:block");
+  
+
+  document.body.innerHTML += `
+  <iframe width="349px" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/830391295&color=%23720e9e&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/laton-raver" title="Laton Raver" target="_blank" style="color: #cccccc; text-decoration: none;">Laton Raver</a> · <a href="https://soundcloud.com/laton-raver/aperture-tribe" title="Aperture Tribe" target="_blank" style="color: #cccccc; text-decoration: none;">Aperture Tribe</a></div>
+  `;
+}
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+</body>
+</html>
