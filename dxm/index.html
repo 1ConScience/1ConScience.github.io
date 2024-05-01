@@ -18,6 +18,9 @@
         padding:0;
         margin:0;
         background-color: black;
+        background-repeat: no-repeat;
+        background-position: 0%;
+        background-image: url(defragmentation_new.png);
     }
 
     #idea_zone{
@@ -61,7 +64,7 @@
 
 
 
-        <img id="defragmentation" src="defragmentation.png" width="1920px"
+        <img id="defragmentation" src="defragmentation_new_calque_vide.png" 
              alt="defragmentation" id="cursorImage" ondragstart="return false;"> 
 
 
@@ -98,7 +101,7 @@ const red_zone = document.getElementById("red_zone");
 red_zone.addEventListener(
   "mouseover",
   (event) => {
-    document.getElementById("defragmentation").src="red_hover.png";
+    document.getElementById("defragmentation").src="red_hover_new.png";
   },
   false,
 );
@@ -106,7 +109,7 @@ red_zone.addEventListener(
 red_zone.addEventListener(
   "mouseout",
   (event) => {
-    document.getElementById("defragmentation").src="defragmentation.png";
+    document.getElementById("defragmentation").src="defragmentation_new_calque_vide.png";
   },
   false,
 );
@@ -123,7 +126,7 @@ const idea_zone = document.getElementById("idea_zone");
 idea_zone.addEventListener(
   "mouseover",
   (event) => {
-    document.getElementById("defragmentation").src="ampoule_hover.png";
+    document.getElementById("defragmentation").src="ampoule_hover_new.png";
   },
   false,
 );
@@ -131,7 +134,7 @@ idea_zone.addEventListener(
 idea_zone.addEventListener(
   "mouseout",
   (event) => {
-    document.getElementById("defragmentation").src="defragmentation.png";
+    document.getElementById("defragmentation").src="defragmentation_new_calque_vide.png";
   },
   false,
 );
@@ -148,7 +151,7 @@ const connexion_zone = document.getElementById("connexion_zone");
 connexion_zone.addEventListener(
   "mouseover",
   (event) => {
-    document.getElementById("defragmentation").src="connexion_hover.png";
+    document.getElementById("defragmentation").src="connexion_hover_new.png";
   },
   false,
 );
@@ -156,7 +159,7 @@ connexion_zone.addEventListener(
 connexion_zone.addEventListener(
   "mouseout",
   (event) => {
-    document.getElementById("defragmentation").src="defragmentation.png";
+    document.getElementById("defragmentation").src="defragmentation_new_calque_vide.png";
   },
   false,
 );
@@ -171,7 +174,7 @@ const puzzle_zone = document.getElementById("puzzle_zone");
 puzzle_zone.addEventListener(
   "mouseover",
   (event) => {
-    document.getElementById("defragmentation").src="puzzle_hover.png";
+    document.getElementById("defragmentation").src="puzzle_hover_new.png";
   },
   false,
 );
@@ -179,7 +182,7 @@ puzzle_zone.addEventListener(
 puzzle_zone.addEventListener(
   "mouseout",
   (event) => {
-    document.getElementById("defragmentation").src="defragmentation.png";
+    document.getElementById("defragmentation").src="defragmentation_new_calque_vide.png";
   },
   false,
 );
